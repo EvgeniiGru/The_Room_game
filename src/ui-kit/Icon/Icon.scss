@@ -1,0 +1,16 @@
+.icon {
+  background: center / contain no-repeat, var(--gray-natural-medium);
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  mask-position: center !important;
+  mask-repeat: no-repeat !important;
+  mask-size: contain !important;
+
+  &_color {
+      &_white {
+        &:hover{background-color: white;}
+      }
+
+  }
+}

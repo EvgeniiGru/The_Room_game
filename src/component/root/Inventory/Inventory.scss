@@ -1,0 +1,46 @@
+.inventory{
+    background: var(--gray-natural-medium);
+    border-radius: 34px;
+    height: 95%;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+
+    &__button {
+        display: flex;
+        width: 100%;
+        border-top-left-radius: 34px;
+        border-top-right-radius: 34px;
+        height: 30px;
+        background: var(--gray-natural-dark);
+        cursor: pointer;
+
+        &_revers {
+            transform: rotate(180deg);
+        }
+
+        &:hover {
+            background: var(--black-natural-1);
+        }
+
+    }
+
+    &__body {
+        display: flex;
+        height: calc(100% - 60px);
+        padding: 10px;
+        flex-direction: column;
+        gap: 20px;
+        background: var(--black-natural-3);
+    }
+
+    &__element_inventory {
+        display: flex;
+        height: calc(100%/4 - 40px);
+        background: var(--black-natural-2);
+        width: 100%;
+        box-shadow: inset -1px 1px 17px 9px;
+        border-radius: 8px;
+    }
+
+}
