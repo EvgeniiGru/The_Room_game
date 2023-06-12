@@ -1,0 +1,20 @@
+.icon-bt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+
+  &__icon {
+    &:hover{
+      background-color: var(--white-natural-1);
+    }
+    &_disable {
+      cursor: not-allowed;
+      &:hover{
+        background-color: inherit;
+      }
+    }
+  }
+}

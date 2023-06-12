@@ -5,6 +5,8 @@
     width: 200px;
     display: flex;
     flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
 
     &__button {
         display: flex;
@@ -41,6 +43,11 @@
         width: 100%;
         box-shadow: inset -1px 1px 17px 9px;
         border-radius: 8px;
+        cursor: pointer;
+
+        &_checked {
+            border: 2px solid var(--white-natural-1);
+        }
     }
 
 }

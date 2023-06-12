@@ -11,6 +11,12 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.mp3$/,
+                use:[{
+                    loader: 'file-loader',
+                }],
+            },
+            {
                 test: /\.tsx?$/,
                 use:[{
                     loader: 'ts-loader',
