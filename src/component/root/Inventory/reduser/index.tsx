@@ -12,19 +12,13 @@ enum TCommonOperations {
     DELETE_THING = 'DELETE_THING',
 }
 
-interface IThingObj {
-    id: string,
-    name: string,
-    url: string,
-    isActive: boolean,
-}
-
-export type TypeGetThingInInventory = (thing: IThingObj) => void
+export type TypeGetThingInInventory = (id: string) => void
 export type TypeCheckThingInInventory = (id: string) => void
 export type TypeDeleteThingInInventory = (id: string) => void
 
 export interface Inventory {
-    inventory: IThingObj[],
+    inventory: Set<string>,
+    currentThing: string,
     getThingInInventory: TypeGetThingInInventory,
     checkThingInInventory: TypeCheckThingInInventory,
     deleteThingInInventory: TypeDeleteThingInInventory,
@@ -39,10 +33,11 @@ type InitialStateType = Omit<
     >
 
 const initialState: InitialStateType = {
-    inventory: [],
+    inventory: new Set<string>(['cigarettes-pack']),
+    currentThing: '',
 };
 
-type TypeId = { id?:string, thing?: IThingObj };
+type TypeId = { id?:string };
 
 type typeActions = Partial<InitialStateType & TypeId> & Record<'type', TCommonOperations>
 
@@ -50,28 +45,19 @@ const reducer = (state: InitialStateType, action: typeActions): InitialStateType
     switch (action.type) {
         case TCommonOperations.CURRENT_THING:
             return {...state,
-                inventory: state.inventory.map((thing) => thing.id === action.id ?
-                    {...thing, isActive:!thing.isActive} :
-                    {...thing, isActive: false}
-                ),
+                currentThing: action.id === state.currentThing ? '': action.id,
             }
         case TCommonOperations.DELETE_THING:
-            return {...state,
-                inventory: state.inventory.map((thing) => thing.id === action.id ?
-                    {id: '', isActive: false, name: '', url: '',} :
-                    {...thing, isActive: false}
-                ),
-            }
+            state.inventory.delete(action.id);
+            return {...state}
         case TCommonOperations.INVENTORY_MAP:
-            const inventory =[...state.inventory];
-            inventory.push(action.thing)
-            return {...state,
-                inventory,
-            }
+           return {
+               ...state,
+               inventory: state.inventory.add(action.id),
+           }
         default:
             return state
     }
-
 }
 
 interface AuxPropsChildren {
@@ -84,22 +70,28 @@ export const useInventory = () => {
     return useContext(InventoryProvider);
 }
 
-export const inventoryProviderComponent = ({children}: AuxPropsChildren): JSX.Element => {
+export const InventoryProviderComponent = ({children}: AuxPropsChildren): JSX.Element => {
 
     const [state, dispatch] = useReducer(reducer, initialState, undefined);
 
     const getThingInInventory = (id: string) =>
         dispatch({type: TCommonOperations.INVENTORY_MAP , id });
-        // checkThingInInventory: TypeCheckThingInInventory,
-        // deleteThingInInventory: TypeDeleteThingInInventory,
+    const checkThingInInventory = (id: string) =>
+        dispatch({type: TCommonOperations.CURRENT_THING , id });
+    const deleteThingInInventory = (id: string) =>
+        dispatch({type: TCommonOperations.DELETE_THING , id });
+
     return (<InventoryProvider.Provider
     value={{
         inventory: state.inventory,
+        currentThing: state.currentThing,
         getThingInInventory,
+        checkThingInInventory,
+        deleteThingInInventory,
     }}>
         {children}
     </InventoryProvider.Provider>)
 }
 
 
-export default inventoryProviderComponent;
+export default InventoryProviderComponent;

@@ -5,6 +5,7 @@ import React from "react";
 import Inventory from "./component/root/Inventory/index";
 import DisplayComponent from "./component/root/GameSpace";
 import Header from "./component/root/Header";
+import InventoryProviderComponent from "./component/root/Inventory/reduser";
 
 
 const b = b_.with('work-space');
@@ -15,8 +16,10 @@ const App = () => {
            <Header/>
        </div>
         <div className={b('body')}>
-            <Inventory/>
-            <DisplayComponent/>
+            <InventoryProviderComponent>
+                <Inventory/>
+                <DisplayComponent/>
+            </InventoryProviderComponent>
         </div>
     </div>
 }

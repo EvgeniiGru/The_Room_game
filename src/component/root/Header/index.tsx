@@ -11,14 +11,14 @@ const b = b_.with('header');
 
 const Header = () => {
 
-    const [openSong] = useSound(openCheckList);
+    const [openSong] = useSound(openCheckList, {sprite: {openSong: [100, 500]}});
 
     return (<div className={b()}>
         <IconButton mods={{
             [Mods.Notebook]: true,
         }}
         onClick={() => {
-            openSong();
+            openSong({id:'openSong'});
         }}
         />
     </div>)

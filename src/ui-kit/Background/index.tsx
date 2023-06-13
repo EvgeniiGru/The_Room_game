@@ -34,4 +34,4 @@ const Background = ({
    </div>
 };
 
-export default Background;
+export default React.memo(Background);
