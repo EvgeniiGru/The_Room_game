@@ -6,11 +6,13 @@ body {
   --gray-natural-dark: #313131;
   --gray-natural-medium: #3e3e3e;
   --gray-natural-light: #636363;
-
-
   --white-natural-1: #d2d2d2;
 
+  --dark-red-natural-1: #870000;
+
   --dark-mask-1: #0000009c;
+
+
 }
 
 html,
@@ -18,16 +20,16 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
+
 }
 
 #root {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background: var(--black-natural-1);
 }
 
 .work-space{
-  display: flex;
   position: relative;
   width: 100%;
   height: 100%;
@@ -43,10 +45,11 @@ body {
 
   &__body {
     display: inline-flex;
-    height: 100%;
+    height: calc(100% - 80px);
+    width: 100%;
     justify-content: center;
     align-items: flex-start;
-    padding-left: 50px;
+    position: relative;
   }
 
 }

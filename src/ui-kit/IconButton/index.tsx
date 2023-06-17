@@ -3,7 +3,7 @@ import './IconButton.scss'
 import b_ from 'b_';
 import React from "react";
 import Icon, {Mods} from "../Icon";
-import {IMods} from "../Icon/type";
+import {Color, IMods} from "../Icon/type";
 
 const b = b_.with('icon-bt');
 
@@ -22,7 +22,7 @@ const IconButton = ({
     mods={},
     className,
     disable,
-    style = {},
+    style={},
                     }:IIconButton) =>
     (<div className={[
         b(),

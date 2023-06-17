@@ -2,6 +2,7 @@
 import b_ from 'b_';
 import React from "react";
 import Background, {BackImg, SheriffsRoom} from "../../../ui-kit/Background";
+import Modal from "../../../ui-kit/Modal";
 
 const b = b_.with('');
 
@@ -11,7 +12,7 @@ const DisplayComponent = () => {
         imgName={{
         [BackImg.SheriffsRoom]: SheriffsRoom.Kitchen,
     }}>
-        <div></div>
+        <Modal isOpen={true} onClickCloseModal={()=> {}}><div/></Modal>
     </Background>
 }
 

@@ -17,7 +17,7 @@ const Inventory = () => {
     const [click] = useSound(checkedInventory,{sprite: {click: [0, 100]}});
     const [empty] = useSound(emptyCheckedInventory, {sprite: {empty: [0, 100]}});
     const inventoryProps = useInventory();
-    const [inventoryMap, setInventoryMap] = useState<string[]>(new Array(5).fill('*'));
+    const [inventoryMap, setInventoryMap] = useState<string[]>(new Array(10).fill('*'));
 
 
     useEffect(()=> {

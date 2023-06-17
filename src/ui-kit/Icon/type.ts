@@ -1,17 +1,25 @@
 export enum Mods {
     Arrow = 'arrow',
     Notebook = 'notebook',
-    Color = 'color',
+    Cross = 'cross',
 };
+export enum SettingIcon {
+    Color = 'color',
+    HoverColor = 'hover-color'
+}
+
 
 export enum Color {
-    White= 'white',
+    White = 'white',
+    Red = 'red',
 }
 
 export interface IMods {
     [Mods.Arrow]?: boolean,
     [Mods.Notebook]?: boolean,
-    [Mods.Color]?: Color,
+    [SettingIcon.Color]?: Color,
+    [SettingIcon.HoverColor]?: Color,
+    [Mods.Cross]?: boolean,
 };
 
 export interface IIcon {

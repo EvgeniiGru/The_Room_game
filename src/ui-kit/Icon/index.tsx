@@ -11,7 +11,6 @@ export {
     Mods
 }
 
-
 const b = b_.with('icon');
 
 const Icon = ({

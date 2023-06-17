@@ -7,9 +7,7 @@
   width: 32px;
 
   &__icon {
-    &:hover{
-      background-color: var(--white-natural-1);
-    }
+
     &_disable {
       cursor: not-allowed;
       &:hover{
