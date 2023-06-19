@@ -1,0 +1,38 @@
+.task-sheet{
+  &__cell {
+    width: inherit;
+    height: inherit;
+    background:
+            repeating-linear-gradient(
+                            transparent,transparent 20px, var(--gray-natural-light) 22px
+            ),
+            repeating-linear-gradient(
+                            90deg,
+                            transparent,transparent 20px, var(--gray-natural-light) 22px
+            );
+  }
+
+  &__modal {
+    width: 500px !important;
+    height: 500px !important;
+  }
+
+  &__block-task {
+    position: absolute;
+    width: inherit;
+    display: inline-flex;
+    justify-content: flex-end;
+    padding-top: 64px;
+    padding-left: 24px;
+    flex-direction: column;
+  }
+
+  &__element-task {
+    padding-right: 35px;
+    text-indent: 20px;
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+}

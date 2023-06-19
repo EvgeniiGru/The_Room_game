@@ -8,10 +8,11 @@ export enum SettingIcon {
     HoverColor = 'hover-color'
 }
 
-
 export enum Color {
+    Gray = 'gray',
     White = 'white',
     Red = 'red',
+    Black = 'black',
 }
 
 export interface IMods {

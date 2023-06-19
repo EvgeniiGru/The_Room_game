@@ -14,6 +14,10 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
+    "paths": {
+      "room": ["./src/ui-kit/index.ts"],
+      "room/type": ["./src/ui-kit/types/index.ts"]
+    },
     "types": [
       "node",
       "webpack-env"

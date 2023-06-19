@@ -11,26 +11,28 @@ const b = b_.with('modal');
 interface IModal {
     isOpen: boolean,
     children: ReactNode | ReactNode[],
-    onClickCloseModal?: () => void,
+    onClick?: () => void,
     classContainer?: string,
 
 }
-const Modal = ({isOpen, children, onClickCloseModal, classContainer}:IModal) => {
+const Modal = ({isOpen, children, onClick, classContainer}:IModal) => {
     return isOpen && (<div className={b('background')}>
         <div className={[
             b('container'),
             classContainer,
         ].join(' ')}>
-            {onClickCloseModal && (<div className={b('cross-block')}>
-                    <IconButton mods={{
+            {onClick && (<div className={b('cross-block')}>
+                    <IconButton
+                    className={b('cross')}
+                    mods={{
                         [Mods.Cross]: true,
+                        [SettingIcon.Color]: Color.Black,
                         [SettingIcon.HoverColor]: Color.Red,
                     }}
-                    onClick={()=> {}}
+                    onClick={()=> onClick()}
                     />
                 </div>
             )}
-            <div className={b('cell')}/>
             {children}
         </div>
     </div>)
@@ -38,4 +40,4 @@ const Modal = ({isOpen, children, onClickCloseModal, classContainer}:IModal) => 
 }
 
 
-export default Modal;
+export default React.memo(Modal);

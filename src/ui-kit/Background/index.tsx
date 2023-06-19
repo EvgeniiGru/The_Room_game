@@ -3,18 +3,24 @@
 import b_ from 'b_'
 import React from 'react';
 import {
-    BackImg,
-    IBackground,
+    IBack,
     SheriffsRoom,
+    BackImg,
 } from "./type";
 
 export {
-    BackImg,
-    Background,
     SheriffsRoom,
+    BackImg,
 }
 
 const b = b_.with('background');
+
+interface IBackground{
+    isNight: boolean,
+    imgName?: IBack,
+    className?: string,
+    children: React.ReactNode | React.ReactNode[],
+};
 
 const Background = ({
     imgName = {},

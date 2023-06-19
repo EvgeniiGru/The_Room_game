@@ -50,6 +50,10 @@ module.exports = {
         ]
     },
     resolve: {
+        alias: {
+            'room': path.resolve(__dirname, 'src/ui-kit/index.tsx'),
+            'room/type': path.resolve(__dirname, 'src/ui-kit/types/index.tsx')
+        },
         extensions: ['.tsx', '.ts', '.js', '.scss', '.css']
     },
     devtool: 'source-map',

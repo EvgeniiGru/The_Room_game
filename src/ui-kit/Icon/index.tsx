@@ -5,10 +5,14 @@ import React from 'react';
 import {
     IIcon,
     Mods,
+    SettingIcon,
+    Color,
 } from "./type";
 
 export {
-    Mods
+    Mods,
+    SettingIcon,
+    Color,
 }
 
 const b = b_.with('icon');

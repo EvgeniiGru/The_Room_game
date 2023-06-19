@@ -2,22 +2,25 @@ import './Header.scss';
 
 import b_ from 'b_'
 import React from "react";
-import IconButton from "../../../ui-kit/IconButton";
-import {Mods} from "../../../ui-kit/Icon";
+import {Button, Song, IconType} from 'room';
 import useSound from "use-sound";
-import {openCheckList} from "../../../ui-kit/Song";
+import {useTaskSheet} from "../TaskSheet/reduser";
 
 const b = b_.with('header');
 
 const Header = () => {
 
-    const [openSong] = useSound(openCheckList, {sprite: {openSong: [100, 500]}});
+    const taskProps = useTaskSheet();
+    const [openSong] = useSound(Song.openCheckList, {sprite: {openSong: [100, 500]}});
 
     return (<div className={b()}>
-        <IconButton mods={{
-            [Mods.Notebook]: true,
+        <Button.Icon mods={{
+            [IconType.Mods.Notebook]: true,
+            [IconType.SettingIcon.Color]: taskProps.isOpen? IconType.Color.White : IconType.Color.Gray,
+            [IconType.SettingIcon.HoverColor]: !taskProps.isOpen? IconType.Color.White : IconType.Color.Red,
         }}
         onClick={() => {
+            taskProps.setOpenedTaskSheet(taskProps.isOpen);
             openSong({id:'openSong'});
         }}
         />

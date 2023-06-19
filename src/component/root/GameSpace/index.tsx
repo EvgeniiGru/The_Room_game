@@ -1,18 +1,21 @@
 
 import b_ from 'b_';
 import React from "react";
-import Background, {BackImg, SheriffsRoom} from "../../../ui-kit/Background";
-import Modal from "../../../ui-kit/Modal";
+import {
+    Background,
+    BackgroundType,
+} from 'room'
+import TaskList from "../TaskSheet";
 
 const b = b_.with('');
 
 const DisplayComponent = () => {
     return <Background
-        isNight={true}
+        isNight={false}
         imgName={{
-        [BackImg.SheriffsRoom]: SheriffsRoom.Kitchen,
+        [BackgroundType.BackImg.SheriffsRoom]: BackgroundType.SheriffsRoom.Kitchen,
     }}>
-        <Modal isOpen={true} onClickCloseModal={()=> {}}><div/></Modal>
+        <TaskList/>
     </Background>
 }
 

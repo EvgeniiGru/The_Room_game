@@ -12,6 +12,12 @@
   }
 
   &_color {
+      &_gray {
+        background-color: var(--gray-natural-medium);
+      }
+      &_black {
+        background-color: var(--black-natural-1);
+      }
       &_white {
         background-color: var(--white-natural-1);
       }
@@ -21,9 +27,25 @@
   }
 
   &_hover-color {
+    &_white {
+      &:hover {
+        background-color: var(--white-natural-1);
+      }
+    }
+    &_gray {
+      &:hover {
+        background-color: var(--gray-natural-medium);
+      }
+    }
     &_red {
       &:hover{
         background-color: var(--dark-red-natural-1) !important;
+      }
+    }
+
+    &_black {
+      &:hover{
+        background-color: var(--black-natural-1) !important;
       }
     }
 
