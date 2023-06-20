@@ -1,0 +1,15 @@
+.next-location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 20px;
+  width: 100px;
+  height: 100%;
+
+
+  &__block-location {
+      &_revers {
+        transform: rotate(180deg);
+      }
+  }
+}

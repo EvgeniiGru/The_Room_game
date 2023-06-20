@@ -2,11 +2,12 @@
     background: var(--gray-natural-medium);
     border-radius: 34px;
     height: 95%;
-    width: 200px;
+    width: 204px;
     display: flex;
     flex-direction: column;
     flex-grow: 0;
     flex-shrink: 0;
+    margin-left: 40px;
 
     &__button {
         display: flex;

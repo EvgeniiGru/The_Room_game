@@ -1,9 +1,10 @@
 .background {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 100% 100%;
   width: calc(100% - 280px);
   height: 95%;
+  display: flex;
 
   &__mask {
     width: 100%;
