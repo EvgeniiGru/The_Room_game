@@ -1,6 +1,6 @@
 import Background from "./Background";
 import {BackImg, SheriffsRoom} from "./Background";
-import Icon, {Color, Mods, SettingIcon} from "./Icon";
+import Icon, {Color, Mods, Notebook, SettingIcon,} from "./Icon";
 import IconButton from "./IconButton";
 import Image from "./Image";
 import Modal from "./Modal";
@@ -26,6 +26,7 @@ const IconType = {
     Mods,
     SettingIcon,
     Color,
+    Notebook,
 }
 
 export {

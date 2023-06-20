@@ -4,7 +4,7 @@ import React from "react";
 import {
     Background,
     BackgroundType,
-} from 'room'
+} from 'rooms';
 import TaskList from "../TaskSheet";
 
 const b = b_.with('');

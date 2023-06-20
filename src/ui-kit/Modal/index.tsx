@@ -2,9 +2,7 @@ import './Modal.scss'
 
 import b_ from 'b_';
 import React, {ReactNode} from "react";
-import IconButton from "../IconButton";
-import {Mods} from "../Icon";
-import {Color, SettingIcon} from "../Icon/type";
+import {Button, IconType} from 'rooms';
 
 const b = b_.with('modal');
 
@@ -17,17 +15,18 @@ interface IModal {
 }
 const Modal = ({isOpen, children, onClick, classContainer}:IModal) => {
     return isOpen && (<div className={b('background')}>
-        <div className={[
+        <div
+            className={[
             b('container'),
             classContainer,
         ].join(' ')}>
             {onClick && (<div className={b('cross-block')}>
-                    <IconButton
+                    <Button.Icon
                     className={b('cross')}
                     mods={{
-                        [Mods.Cross]: true,
-                        [SettingIcon.Color]: Color.Black,
-                        [SettingIcon.HoverColor]: Color.Red,
+                        [IconType.Mods.Cross]: true,
+                        [IconType.SettingIcon.Color]: IconType.Color.Black,
+                        [IconType.SettingIcon.HoverColor]: IconType.Color.Red,
                     }}
                     onClick={()=> onClick()}
                     />

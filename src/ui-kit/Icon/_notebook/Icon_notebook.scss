@@ -1,3 +1,11 @@
 .icon.icon_notebook {
-  mask: url('notebook.svg');
+
+  &_open{
+    mask: url('notebook-open.svg');
+  }
+
+  &_close{
+    mask: url('notebook-close.svg');
+  }
+
 }

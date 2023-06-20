@@ -3,4 +3,14 @@
   width: 100%;
   padding-left: 50px;
   align-items: center;
+
+  &__icon-bt {
+    width: 45px;
+    height: 45px;
+  }
+
+  &__icon {
+    width: 45px;
+    height: 45px;
+  }
 }

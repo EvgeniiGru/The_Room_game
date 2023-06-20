@@ -7,12 +7,15 @@ import {
     Mods,
     SettingIcon,
     Color,
+    Notebook,
 } from "./type";
 
 export {
     Mods,
     SettingIcon,
     Color,
+    Notebook,
+
 }
 
 const b = b_.with('icon');
