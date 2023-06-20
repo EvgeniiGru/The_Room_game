@@ -2,7 +2,7 @@
   "name": "the_room",
   "version": "1.0.0",
   "scripts": {
-    "start": "npx webpack serve && node server/index.ts"
+    "start": "npx webpack server"
   },
   "dependencies": {
     "@types/b_": "1.3.1",
