@@ -2,7 +2,7 @@ import './NextLocation.scss';
 
 import b_ from 'b_';
 import React from "react";
-import {useHistory} from "react-router";
+import {useHistory} from "react-router-dom";
 import {Button, IconType} from "rooms";
 
 const b = b_.with('next-location');

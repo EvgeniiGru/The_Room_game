@@ -10,6 +10,7 @@ import TaskSheetProviderComponent from "./component/root/TaskSheet/reduser";
 import NextLocation from "./component/root/NextLocation";
 
 
+
 const b = b_.with('work-space');
 
 const App = () => {
@@ -19,12 +20,12 @@ const App = () => {
                <Header/>
            </div>
             <div className={b('body')}>
-                <InventoryProviderComponent>
-                    <Inventory/>
-                    <NextLocation urlLocation={''} revers={true}/>
-                    <DisplayComponent/>
-                    <NextLocation urlLocation={''}/>
-                </InventoryProviderComponent>
+                    <InventoryProviderComponent>
+                        <Inventory/>
+                        <NextLocation urlLocation={''} revers={true}/>
+                        <DisplayComponent/>
+                        <NextLocation urlLocation={''}/>
+                    </InventoryProviderComponent>
             </div>
         </TaskSheetProviderComponent>
     </div>

@@ -1,18 +1,16 @@
-import b_ from 'b_';
 import React from "react";
-import {Background, BackgroundType} from 'rooms';
-import TaskList from "../TaskSheet";
+import {Route, Switch} from "react-router-dom";
+import {pathRoot} from "./type";
+import FirstDay from "../../module/Firrst_day";
 
-const b = b_.with('next-location');
 
 const DisplayComponent = () => {
-    return <Background
-        isNight={false}
-        imgName={{
-        [BackgroundType.BackImg.SheriffsRoom]: BackgroundType.SheriffsRoom.Kitchen,
-    }}>
-        <TaskList/>
-    </Background>
+    return <Switch>
+            <Route
+            path={pathRoot.FirstDay()}
+            component={FirstDay}
+            />
+        </Switch>
 }
 
 export default DisplayComponent;

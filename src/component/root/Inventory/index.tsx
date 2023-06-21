@@ -2,8 +2,6 @@ import './Inventory.scss'
 
 import b_ from 'b_'
 import React, {useEffect, useMemo, useState} from 'react';
-// import Icon, {Mods} from "../../../ui-kit/Icon";
-// import {Color} from "../../../ui-kit/Icon/type";
 import useSound from 'use-sound';
 import {checkedInventory, emptyCheckedInventory} from "../../../ui-kit/Song";
 import {useInventory} from "./reduser";
@@ -26,9 +24,9 @@ const Inventory = () => {
         setInventoryMap(newInventoryMap);
     }, [inventoryProps.inventory])
 
-    const inventoryMapComponent = useMemo(()=> inventoryMap.map(i => {
+    const inventoryMapComponent = useMemo(()=> inventoryMap.map((i, k) => {
         const thingObj = getImage(i);
-        return <div onClick={() => {
+        return <div key={`${k}_${i}`} onClick={() => {
             if (i === '*') {
                 empty({id: 'empty'});
             } else {
