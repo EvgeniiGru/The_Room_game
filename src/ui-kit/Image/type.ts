@@ -4,6 +4,7 @@ export enum IImageThings {
     THINGS= 'things',
 };
 
+
 export enum AllThings {
     CigarettesPack = 'cigarettes-pack',
 }

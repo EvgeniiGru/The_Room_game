@@ -2,7 +2,7 @@ import Background from "./Background";
 import {BackImg, SheriffsRoom} from "./Background";
 import Icon, {Color, Mods, Notebook, SettingIcon,} from "./Icon";
 import IconButton from "./IconButton";
-import Image from "./Image";
+import Image, {AllThings, IImageThings} from "./Image";
 import Modal from "./Modal";
 import {checkedInventory, emptyCheckedInventory, openCheckList, songGetInventory} from "./Song";
 
@@ -29,6 +29,10 @@ const IconType = {
     Notebook,
 }
 
+const Images = {
+    AllThings,
+}
+
 export {
     Background as Background,
     BackgroundType,
@@ -36,6 +40,8 @@ export {
     Icon as Icon,
     IconType,
     Image as Image,
+    IImageThings as Things,
+    Images,
     Modal as Modal,
     Song as Song,
 }

@@ -15,7 +15,6 @@ export {
     SettingIcon,
     Color,
     Notebook,
-
 }
 
 const b = b_.with('icon');
