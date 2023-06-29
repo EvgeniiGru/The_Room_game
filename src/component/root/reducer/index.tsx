@@ -39,7 +39,6 @@ type typeActions = Partial<InitialStateType> & Record<'type', TCommonOperations>
 const reducer = (state: InitialStateType, action: typeActions): InitialStateType => {
     switch (action.type) {
         case TCommonOperations.RIGHT_LOCATION:
-            debugger
             return {...state,
                 rightLocation: action.rightLocation,
             }

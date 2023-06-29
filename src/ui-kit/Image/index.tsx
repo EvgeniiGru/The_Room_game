@@ -17,25 +17,27 @@ export {
 
 const Image = ({
     imgName = {},
-    className,
+    classNameContainer,
+    classNameImg,
     children,
     isNight,
-    style ={},
-              }: IImageProps ) => {
-   return <div
-       style={{
-           width:`${style.width ?? 100}px`,
-           height:`${style.height ?? 100}px`,
-       }}
-       className={[
-        b({
-            ...imgName
-        }),
-        className
-   ].filter(Boolean).join(' ')}>
-       <div className={b('mask', {dark: isNight})}>
-            {children}
-       </div>
+    style ={}}: IImageProps ) => {
+    const width = style.width;
+    const height = style.height
+   return <div className={classNameContainer}>
+            <div
+               style={{
+                   width,
+                   height,
+               }}
+               className={[
+                b({
+                    ...imgName
+                }),
+                   classNameImg
+           ].filter(Boolean).join(' ')}>
+                    {children}
+           </div>
    </div>
 };
 

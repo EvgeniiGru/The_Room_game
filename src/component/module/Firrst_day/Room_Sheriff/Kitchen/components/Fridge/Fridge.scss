@@ -1,11 +1,46 @@
-.fridge {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-
-
+.fridge-img {
   &_main {
     background-image: url('img/Fridge.png');
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 1%;
+  }
+
+  &_top {
+    background-image: url('img/Top-door.png');
+  }
+
+  &_bottom {
+    background-image: url('img/Buttom-door.png');
+  }
+
+}
+
+.fridge-construction {
+
+  &_main {
+    display: flex;
+    width: 15%;
+    position: absolute;
+    height: 60%;
+    margin-right: 50px;
+  }
+
+  &_top{
+    margin-top: 8%;
+    display: flex;
+    width: 76%;
+    height: 25%;
+    cursor: pointer;
+  }
+
+  &_bottom {
+    display: flex;
+    width: 76%;
+    height: 52%;
+    cursor: pointer;
   }
 
 }

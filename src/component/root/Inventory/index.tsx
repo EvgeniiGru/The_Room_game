@@ -39,7 +39,7 @@ const Inventory = () => {
             <Image imgName={{
                 [IImageThings.THINGS]: thingObj.img
             }}
-            style={{width:65, height:65}}
+            style={{width:50, height:65}}
                    isNight={true}
             />
             <h4 className={b('description_thing')}>{thingObj.name}</h4>

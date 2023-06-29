@@ -16,7 +16,8 @@ export interface IImage {
 export interface IImageProps{
     isNight?: boolean,
     imgName?: IImage,
-    className?: string,
+    classNameContainer?: string,
+    classNameImg?: string,
     children?: React.ReactNode | React.ReactNode[],
     style?:{
         width?: number,

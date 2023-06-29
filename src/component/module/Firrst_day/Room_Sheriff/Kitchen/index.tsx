@@ -22,7 +22,11 @@ const Kitchen = () => {
     }, []);
 
     return <div className={b()}>
-        <Fridge/>
+        <div className={b('top')}/>
+        <div className={b('flow')}>
+            <Fridge/>
+        </div>
+
     </div>
 }
 
