@@ -12,8 +12,16 @@
     background-image: url('img/Top-door.png');
   }
 
+  &_top_open{
+    background-image: url('img/Open-top-door.png');
+  }
+
   &_bottom {
     background-image: url('img/Buttom-door.png');
+  }
+
+  &_bottom_open {
+    background-image: url('img/Open-door.png');
   }
 
 }
@@ -22,24 +30,41 @@
 
   &_main {
     display: flex;
-    width: 15%;
+    width: 16%;
     position: absolute;
     height: 60%;
     margin-right: 50px;
   }
 
   &_top{
-    margin-top: 8%;
+    margin-top: 7%;
     display: flex;
-    width: 76%;
-    height: 25%;
+    width: 75%;
+    height: 29%;
+    cursor: pointer;
+  }
+
+  &_top_open {
+    margin-top: 7%;
+    margin-left: 3%;
+    display: flex;
+    width: 70%;
+    height: 29%;
     cursor: pointer;
   }
 
   &_bottom {
     display: flex;
-    width: 76%;
-    height: 52%;
+    width: 75%;
+    height: 48%;
+    cursor: pointer;
+  }
+
+  &_bottom_open {
+    margin-left: 3%;
+    display: flex;
+    width: 70%;
+    height: 48%;
     cursor: pointer;
   }
 

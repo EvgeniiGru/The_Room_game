@@ -15,16 +15,26 @@ export {
     AllThings,
 }
 
+const handleOpenDoor = (onClick: () => void) => {
+    if(onClick){
+        onClick();
+    }
+}
+
 const Image = ({
     imgName = {},
     classNameContainer,
     classNameImg,
     children,
     isNight,
+    onClick,
     style ={}}: IImageProps ) => {
     const width = style.width;
     const height = style.height
-   return <div className={classNameContainer}>
+   return <div
+       className={classNameContainer}
+       onClick={()=> handleOpenDoor(onClick)}
+   >
             <div
                style={{
                    width,

@@ -14,6 +14,7 @@ export interface IImage {
 };
 
 export interface IImageProps{
+    onClick?: ()=> void,
     isNight?: boolean,
     imgName?: IImage,
     classNameContainer?: string,
