@@ -4,13 +4,14 @@ import Icon, {Color, Mods, Notebook, SettingIcon,} from "./Icon";
 import IconButton from "./IconButton";
 import Image, {AllThings, IImageThings} from "./Image";
 import Modal from "./Modal";
-import {checkedInventory, emptyCheckedInventory, openCheckList, songGetInventory} from "./Song";
+import {checkedInventory, emptyCheckedInventory, openCheckList, songGetInventory, fridgeOpenCloseDoor} from "./Song";
 
 const Song = {
     songGetInventory,
     checkedInventory,
     openCheckList,
     emptyCheckedInventory,
+    fridgeOpenCloseDoor,
 }
 
 const Button = {

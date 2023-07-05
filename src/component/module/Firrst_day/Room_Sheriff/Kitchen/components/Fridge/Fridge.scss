@@ -22,12 +22,15 @@
 
   &_bottom_open {
     background-image: url('img/Open-door.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 }
 
 .fridge-construction {
-
+  z-index : var(--z-index-things-third-plan);
   &_main {
     display: flex;
     width: 16%;
@@ -67,5 +70,6 @@
     height: 48%;
     cursor: pointer;
   }
+
 
 }

@@ -1,7 +1,7 @@
 import React, {
     createContext,
     ReactChild,
-    ReactChildren, ReducerState,
+    ReactChildren,
     useContext,
     useReducer
 } from "react";
@@ -18,12 +18,12 @@ export type TypeDeleteThingInInventory = (id: string) => void
 
 export interface Inventory {
     inventory: Set<string>,
+    usedInventory: Set<string>,
     currentThing: string,
     getThingInInventory: TypeGetThingInInventory,
     checkThingInInventory: TypeCheckThingInInventory,
     deleteThingInInventory: TypeDeleteThingInInventory,
 }
-
 
 type InitialStateType = Omit<
     Inventory,
@@ -33,7 +33,8 @@ type InitialStateType = Omit<
     >
 
 const initialState: InitialStateType = {
-    inventory: new Set<string>(['cigarettes-pack']),
+    usedInventory: new Set<string>([]),
+    inventory: new Set<string>(['cigarettes-pack', 'cheese']),
     currentThing: '',
 };
 
@@ -49,7 +50,9 @@ const reducer = (state: InitialStateType, action: typeActions): InitialStateType
             }
         case TCommonOperations.DELETE_THING:
             state.inventory.delete(action.id);
-            return {...state}
+            return {...state,
+            usedInventory: state.usedInventory.add(action.id)
+            }
         case TCommonOperations.INVENTORY_MAP:
            return {
                ...state,
@@ -83,6 +86,7 @@ export const InventoryProviderComponent = ({children}: AuxPropsChildren): JSX.El
 
     return (<InventoryProvider.Provider
     value={{
+        usedInventory: state.usedInventory,
         inventory: state.inventory,
         currentThing: state.currentThing,
         getThingInInventory,

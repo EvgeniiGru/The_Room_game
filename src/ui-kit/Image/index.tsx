@@ -1,8 +1,7 @@
 // @import *.scss
 
 import b_ from 'b_'
-import React from 'react'
-import Background from "../Background";
+import React, {BaseSyntheticEvent} from 'react'
 import {
     IImageProps,
     IImageThings,
@@ -15,8 +14,9 @@ export {
     AllThings,
 }
 
-const handleOpenDoor = (onClick: () => void) => {
+const handleOpenDoor = (onClick: () => void, event: BaseSyntheticEvent) => {
     if(onClick){
+        event.stopPropagation();
         onClick();
     }
 }
@@ -33,7 +33,7 @@ const Image = ({
     const height = style.height
    return <div
        className={classNameContainer}
-       onClick={()=> handleOpenDoor(onClick)}
+       onClick={(event)=> handleOpenDoor(onClick, event)}
    >
             <div
                style={{

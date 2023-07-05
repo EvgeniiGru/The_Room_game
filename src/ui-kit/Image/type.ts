@@ -2,16 +2,17 @@ import React from "react";
 
 export enum IImageThings {
     THINGS= 'things',
-};
+}
 
 
 export enum AllThings {
     CigarettesPack = 'cigarettes-pack',
+    Cheese = 'cheese',
 }
 
 export interface IImage {
     [IImageThings.THINGS]?:AllThings,
-};
+}
 
 export interface IImageProps{
     onClick?: ()=> void,
@@ -24,4 +25,4 @@ export interface IImageProps{
         width?: number,
         height?: number,
     }
-};
+}

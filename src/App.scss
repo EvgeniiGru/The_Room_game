@@ -12,7 +12,13 @@ body {
 
   --dark-mask-1: #0000009c;
 
-
+  --z-index-backgound: 10;
+  --z-index-things-third-plan:  13;
+  --z-index-things-second-plan: 15;
+  --z-index-things-first-plan: 20;
+  --z-index-button: 40;
+  --z-index-popup: 80;
+  --z-index-modal: 100;
 }
 
 html,
