@@ -5,11 +5,13 @@ import React from "react";
 import {Button, Song, IconType} from 'rooms';
 import useSound from "use-sound";
 import {useTaskSheet} from "../TaskSheet/reduser";
+import {useHistory} from 'react-router-dom';
 
 const b = b_.with('header');
 
 const Header = () => {
 
+    const history  = useHistory();
     const taskProps = useTaskSheet();
     const [openSong] = useSound(Song.openCheckList, {sprite: {openSong: [100, 500]}});
 
@@ -24,7 +26,15 @@ const Header = () => {
             openSong({id:'openSong'});
         }}
         className={b('icon-bt')}
-        classNameIcon={b('icon')}
+        classNameIcon={b('icon')} />
+        <Button.Icon onClick={()=>{
+            history.goBack();
+        }}
+        mods={{
+            [IconType.Mods.Arrow]: true,
+            [IconType.SettingIcon.HoverColor]: IconType.Color.Red
+        }}
+        text={'Назад'}
         />
     </div>)
 }

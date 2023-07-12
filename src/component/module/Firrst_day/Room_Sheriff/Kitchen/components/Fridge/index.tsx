@@ -35,11 +35,12 @@ const Fridge = () => {
             }}
             classNameContainer={construction({top_open: isOpenTopDoor, top: !isOpenTopDoor})}
             classNameImg={img({top_open: isOpenTopDoor, top: !isOpenTopDoor})}/>
+            <div className={construction('bottom-block-door')}>
         <Image
             onClick={() => {
                 if(!isOpenBottomDoor) {
                     songDoor({id: 'close'})
-                    setOpenBottomDoor(!isOpenBottomDoor)
+                    setOpenBottomDoor(true)
                 } else {
                     history.push(pathSheriffRoom.FridgeInside());
                 }
@@ -47,6 +48,15 @@ const Fridge = () => {
             classNameContainer={construction({bottom: !isOpenBottomDoor, bottom_open: isOpenBottomDoor })}
             classNameImg={img({bottom: !isOpenBottomDoor, bottom_open: isOpenBottomDoor})}>
         </Image>
+                {isOpenBottomDoor && (<Image
+                    onClick={()=>{
+                        songDoor({id: 'close'})
+                        setOpenBottomDoor(false)
+                    }}
+                    classNameContainer={construction({opened_door: true})}
+                    classNameImg={img({opened_door: true})}
+                />)}
+            </div>
     </Image>
 }
 

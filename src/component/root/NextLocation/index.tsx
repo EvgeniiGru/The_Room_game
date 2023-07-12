@@ -16,6 +16,7 @@ interface INextLocation {
 const NextLocation = ({urlLocation, revers, disable}:INextLocation) => {
     const history = useHistory();
     return <div className={b( {revers})}>
+        <div className={b('next-location-block ')}>
             <Button.Icon
                 disable={disable}
                 className={b('block-location', {revers})}
@@ -26,6 +27,7 @@ const NextLocation = ({urlLocation, revers, disable}:INextLocation) => {
                     [IconType.SettingIcon.HoverColor]: disable ? IconType.Color.Gray : IconType.Color.Red
              }}
             />
+        </div>
     </div>
 }
 

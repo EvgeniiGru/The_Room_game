@@ -8,6 +8,7 @@
     flex-grow: 0;
     flex-shrink: 0;
     margin-left: 40px;
+    border: 2px solid var(--gray-natural-dark);
 
     &__button {
         display: flex;
@@ -52,7 +53,7 @@
         height: 121px;
         background: var(--black-natural-2);
         width: 180px;
-        box-shadow: inset -1px 1px 17px 9px;
+        box-shadow: inset -1px 1px 17px 9px var(--box-shadow);
         border-radius: 8px;
         cursor: pointer;
         flex-grow: 0;

@@ -1,13 +1,24 @@
 .next-location {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   min-width: 20px;
-  width: 100px;
-  height: 100%;
-
+  width: 60px;
+  height: 95%;
+  &_revers {
+    justify-content: flex-end;
+  }
 
   &__block-location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 20px;
+    width: 44px;
+    height: 65px;
+    background-color: var(--black-natural-2);
+    border-radius: 0px 32px 32px 0;
+
       &_revers {
         transform: rotate(180deg);
       }

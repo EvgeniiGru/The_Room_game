@@ -27,6 +27,13 @@
     align-items: center;
   }
 
+  &_opened_door {
+    background-image: url('img/Opened-door.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 }
 
 .fridge-construction {
@@ -59,15 +66,30 @@
   &_bottom {
     display: flex;
     width: 75%;
-    height: 48%;
+    height: 75%;
     cursor: pointer;
   }
 
+  &__bottom-block-door {
+    display: inline-flex;
+    width: 100%;
+    height: 66%;
+    justify-content: center;
+  }
+
   &_bottom_open {
+    margin-top: 3%;
     margin-left: 3%;
     display: flex;
-    width: 70%;
-    height: 48%;
+    width: 65%;
+    height: 71%;
+    cursor: pointer;
+  }
+
+  &_opened_door {
+    display: flex;
+    width: 7%;
+    height: 75%;
     cursor: pointer;
   }
 

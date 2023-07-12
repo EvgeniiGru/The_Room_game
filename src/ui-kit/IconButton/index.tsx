@@ -4,6 +4,7 @@ import b_ from 'b_';
 import React from "react";
 import Icon from "../Icon";
 import {IMods} from "../Icon/type";
+import {handleOnClick} from "../function/indes";
 
 const b = b_.with('icon-bt');
 
@@ -12,6 +13,7 @@ interface IIconButton {
     className?: string,
     classNameIcon?: string,
     disable?: boolean,
+    text?: string,
     onClick: () => void,
     style?:{
         border?: boolean,
@@ -26,13 +28,10 @@ const IconButton = ({
     disable,
                     }:IIconButton) =>
     (<div className={[
-        b(),
+        b( ),
         className,
     ].join(' ')}
-    onClick= {()=> {
-        if (!disable) {
-            onClick();
-        }}}
+    onClick= {(event)=> handleOnClick({onClick, disable, event})}
     >
         <Icon
             mods={mods}

@@ -5,9 +5,9 @@
   cursor: pointer;
   height: 32px;
   width: 32px;
+  gap: 8px;
 
   &__icon {
-
     &_disable {
       cursor: not-allowed;
       &:hover{
