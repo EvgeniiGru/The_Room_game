@@ -1,20 +1,35 @@
 import './Modal.scss'
 
 import b_ from 'b_';
-import React, {ReactNode} from "react";
+import React, {ReactNode, useEffect, useLayoutEffect} from "react";
 import {Button, IconType} from 'rooms';
 
 const b = b_.with('modal');
 
 interface IModal {
-    isOpen: boolean,
     children: ReactNode | ReactNode[],
-    onClick?: () => void,
+    onClick: () => void,
     classContainer?: string,
-
 }
-const Modal = ({isOpen, children, onClick, classContainer}:IModal) => {
-    return isOpen && (<div className={b('background')}>
+
+
+const Modal = ({children, onClick, classContainer}:IModal) => {
+
+    const handleEscapeClick = (event: KeyboardEvent) => {
+        event.defaultPrevented;
+        if(event.key === 'Escape') {
+            onClick();
+        }
+    }
+
+    useEffect(()=> {
+        document.addEventListener('keydown', handleEscapeClick)
+        return () => {
+            document.removeEventListener('keydown', handleEscapeClick)
+        }
+    }, [])
+
+    return <div className={b('background')}>
         <div
             className={[
             b('container'),
@@ -34,7 +49,7 @@ const Modal = ({isOpen, children, onClick, classContainer}:IModal) => {
             )}
             {children}
         </div>
-    </div>)
+    </div>
 
 }
 

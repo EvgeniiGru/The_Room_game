@@ -2,7 +2,7 @@ import './Kitchen.scss';
 
 import b_ from 'b_';
 import React, {useEffect} from "react";
-import {useLocation} from "../../../../root/reducer";
+import {useLocation} from "../../../../root/NextLocation/reducer";
 import Fridge from "./components/Fridge";
 import {Background, BackgroundType} from "rooms";
 import {pathSheriffRoom} from "../type";

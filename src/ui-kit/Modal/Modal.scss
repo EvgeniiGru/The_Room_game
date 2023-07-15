@@ -5,6 +5,9 @@
     height: 100%;
     position: absolute;
     right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
     backdrop-filter: blur(8px);
     background-color: #2f2f2f00;
     display: flex;
@@ -16,9 +19,9 @@
   &__container{
     width: 500px;
     height: 300px;
-    box-shadow: 12px 12px var(--black-natural-1);
+    box-shadow: 12px 12px var(--box-shadow);
     border-radius: 12px;
-    background: var(--white-natural-1);
+    background: var(--modal-background);
   }
 
   &__cross-block{

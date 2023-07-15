@@ -1,0 +1,22 @@
+.settings {
+    display: flex;
+    justify-content:flex-start;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 30px;
+    padding: 0 25px;
+
+    &__title {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__item-setting-block {
+      display: inline-flex;
+      height: 50px;
+      justify-content: space-between;
+      align-items: center;
+    }
+}

@@ -17,7 +17,6 @@ const Inventory = () => {
     const inventoryProps = useInventory();
     const [inventoryMap, setInventoryMap] = useState<string[]>(new Array(10).fill('*'));
 
-
     useEffect(()=> {
         const currentInventoryMap = [...inventoryProps.inventory]
         const newInventoryMap = inventoryMap.map((i, k )=> currentInventoryMap[k] ?? '*' );

@@ -2,41 +2,47 @@ import './Header.scss';
 
 import b_ from 'b_'
 import React from "react";
-import {Button, Song, IconType} from 'rooms';
+import {Button, Song, IconType, Modal} from 'rooms';
 import useSound from "use-sound";
 import {useTaskSheet} from "../TaskSheet/reduser";
-import {useHistory} from 'react-router-dom';
 
 const b = b_.with('header');
 
-const Header = () => {
+interface IHeader {
+    setVisibleSettings: (arg:boolean) => void,
+    isVisibleSettings: boolean,
+}
 
-    const history  = useHistory();
+const Header = ({isVisibleSettings, setVisibleSettings}: IHeader) => {
     const taskProps = useTaskSheet();
-    const [openSong] = useSound(Song.openCheckList, {sprite: {openSong: [100, 500]}});
+    const [openSong] = useSound(Song.openCheckList,
+        {sprite: {openSong: [100, 500]}});
 
     return (<div className={b()}>
-        <Button.Icon mods={{
-            [IconType.Mods.Notebook]: taskProps.isOpen ?  IconType.Notebook.Close : IconType.Notebook.Open,
-            [IconType.SettingIcon.Color]: taskProps.isOpen? IconType.Color.White : IconType.Color.Gray,
-            [IconType.SettingIcon.HoverColor]: !taskProps.isOpen? IconType.Color.White : IconType.Color.Red,
+        {!isVisibleSettings && (<Button.Icon mods={{
+            [IconType.Mods.Notebook]: taskProps.isOpen ? IconType.Notebook.Close : IconType.Notebook.Open,
+            [IconType.SettingIcon.Color]: taskProps.isOpen ? IconType.Color.White : IconType.Color.Gray,
+            [IconType.SettingIcon.HoverColor]: !taskProps.isOpen ? IconType.Color.White : IconType.Color.Red,
         }}
-        onClick={() => {
-            taskProps.setOpenedTaskSheet(taskProps.isOpen);
-            openSong({id:'openSong'});
+                      onClick={() => {
+                          taskProps.setOpenedTaskSheet(taskProps.isOpen);
+                          openSong({id: 'openSong'});
+                      }}
+                      className={b('icon-bt')}
+                      classNameIcon={b('icon')}/>)}
+        {!taskProps.isOpen && (<Button.Icon
+            classNameIcon={b('icon-setting')}
+            onClick={() => {
+            setVisibleSettings(!isVisibleSettings);
         }}
-        className={b('icon-bt')}
-        classNameIcon={b('icon')} />
-        <Button.Icon onClick={()=>{
-            history.goBack();
-        }}
-        mods={{
-            [IconType.Mods.Arrow]: true,
-            [IconType.SettingIcon.HoverColor]: IconType.Color.Red
-        }}
-        text={'Назад'}
-        />
+                      mods={{
+                          [IconType.Mods.Setting]: !isVisibleSettings,
+                          [IconType.Mods.Cross]: isVisibleSettings,
+                          [IconType.SettingIcon.Color]: isVisibleSettings ? IconType.Color.White : IconType.Color.Gray,
+                          [IconType.SettingIcon.HoverColor]: IconType.Color.Red
+                      }}
+        />)}
     </div>)
 }
 
-export default Header;
+export default React.memo(Header);

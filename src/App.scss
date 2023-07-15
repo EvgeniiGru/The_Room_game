@@ -8,6 +8,8 @@ html[data-theme='dark']{
   --gray-natural-light: #636363;
   --white-natural-1: #d2d2d2;
 
+  --modal-background: #d2d2d2;
+
   --dark-red-natural-1: #870000;
 
   --dark-mask-1: #0000009c;
@@ -26,13 +28,20 @@ html[data-theme='light']{
   --black-natural-1: #dbdbdb;
   --black-natural-2: #ffffff;
   --black-natural-3: #dfdfdf;
+
   --gray-natural-dark: #8f8e8e;
   --gray-natural-medium: #272727;
   --gray-natural-light: #838383;
+
   --white-natural-1: #1c1c1c;
-  --dark-red-natural-1: #870000;
+  --modal-background: #d2d2d2;
+
+  --dark-red-natural-1: #fd0000;
+
   --dark-mask-1: rgba(213, 213, 213, 0.61);
   --box-shadow: #a9a9a9;
+
+
   --z-index-backgound: 10;
   --z-index-things-third-plan: 13;
   --z-index-things-second-plan: 15;

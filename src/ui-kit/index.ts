@@ -1,10 +1,11 @@
 import Background from "./Background";
 import {BackImg, SheriffsRoom} from "./Background";
 import Icon, {Color, Mods, Notebook, SettingIcon,} from "./Icon";
-import IconButton from "./IconButton";
+import IconButton from "./Button/IconButton";
 import Image, {AllThings, IImageThings} from "./Image";
 import Modal from "./Modal";
 import {checkedInventory, emptyCheckedInventory, openCheckList, songGetInventory, fridgeOpenCloseDoor} from "./Song";
+import RadioButton from "./Button/RadioButton";
 
 const Song = {
     songGetInventory,
@@ -16,6 +17,7 @@ const Song = {
 
 const Button = {
     Icon: IconButton,
+    Radio: RadioButton,
 }
 
 const BackgroundType = {

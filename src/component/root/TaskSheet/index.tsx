@@ -18,26 +18,23 @@ const TaskList = () => {
     </div>
     )), [] )
 
-    return <Modal isOpen={taskProps.isOpen}
-                  onClick={()=> {
-                      openSong({id:'openSong'});
-                      taskProps.setOpenedTaskSheet(taskProps.isOpen);
-                  }}
-                  classContainer={b('modal')}
+    return <>
+        {taskProps.isOpen && (<Modal
+           onClick={() => {
+               openSong({id: 'openSong'});
+               taskProps.setOpenedTaskSheet(taskProps.isOpen);
+           }}
+           classContainer={b('modal')}
     >
         <div className={b('cell')}>
             <div className={b('title')}>
                 <h2 className={b('text')}>Задания</h2>
             </div>
             <div className={b('block-task')}>
-
-                <div className={b('element-task')}>
-                    <h4 className={b('text', {cross: true})}>Вторая задача которую мы реализуем, а дальше не будет ни какая</h4>
-                </div>
+                {taskSheetComponent}
             </div>
         </div>
-
-        </Modal>
+    </Modal>)}</>
 };
 
-export default TaskList;
+export default React.memo(TaskList);
