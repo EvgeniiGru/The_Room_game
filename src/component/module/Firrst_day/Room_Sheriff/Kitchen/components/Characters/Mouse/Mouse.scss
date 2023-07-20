@@ -1,23 +1,61 @@
 .mouse-img {
-  &_body {
+  &__body {
     background-image: url('img/mouse-first-plane.png');
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
   }
 
-  &_heand {
-    background-image: url('img/mouses-heand.png');
+  &__hand {
+    background-image: url('img/mouses-hand.png');
+  }
+
+  &__cheek {
+    background-image: url('img/mouses-cheek.png');
   }
 
 }
 
 .mouse-constructor {
+  display: flex;
 
   &__body {
-
+    width: 11%;
+    height: 51%;
+    margin-bottom: 6%;
   }
 
-  &__heand {
+  &__hand {
+    margin-left: 33%;
+    margin-top: -10%;
+    width: 55%;
+    height: 38%;
+    transform: rotate(17deg);
+    transition:all 1s ease-in-out;
+    transform-origin: left;
 
+    &_motion {
+      transform: rotate(-13deg);
+    }
+  }
 
+  &__block-cheek {
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+    height: 38%;
+    justify-content: flex-end;
+  }
+
+  &__cheek {
+    width: 100%;
+    height: 45%;
+    transition: all .1s;
+    transform: translateX(0px);
+    &_motion {
+      transform: translateX(4%);
+    }
   }
 
 }
