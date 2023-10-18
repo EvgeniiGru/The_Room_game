@@ -7,9 +7,7 @@ import Mouse from "../Characters/Mouse";
 
 const b = b_.with('fridge-inside');
 
-const FridgeInside = () => {
-
-    return <Background
+const FridgeInside = () => (<Background
         isNight={false}
         imgName={{
             [BackgroundType.BackImg.SheriffsRoom]: BackgroundType.SheriffsRoom.FridgeInside,
@@ -20,9 +18,8 @@ const FridgeInside = () => {
         <div className={b('bottom-shelf')}>
             <Mouse/>
         </div>
-    </Background>
-};
+    </Background>);
 
-export default FridgeInside;
+export default React.memo(FridgeInside);
 
 

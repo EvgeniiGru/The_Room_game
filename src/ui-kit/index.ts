@@ -6,6 +6,7 @@ import Image, {AllThings, IImageThings} from "./Image";
 import Modal from "./Modal";
 import {checkedInventory, emptyCheckedInventory, openCheckList, songGetInventory, fridgeOpenCloseDoor} from "./Song";
 import RadioButton from "./Button/RadioButton";
+import CommandButton from "./Button/CommonButton";
 
 const Song = {
     songGetInventory,
@@ -18,6 +19,7 @@ const Song = {
 const Button = {
     Icon: IconButton,
     Radio: RadioButton,
+    Command: CommandButton,
 }
 
 const BackgroundType = {
