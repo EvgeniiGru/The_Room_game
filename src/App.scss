@@ -1,5 +1,8 @@
 
 html[data-theme='dark']{
+  --always-white-1: #d2d2d2;
+  --always-black-1: #000000;
+
   --black-natural-2: #1c1c1c;
   --black-natural-1: #000000;
   --black-natural-3: #232323;
@@ -25,6 +28,9 @@ html[data-theme='dark']{
 }
 
 html[data-theme='light']{
+  --always-white-1: #d2d2d2;
+  --always-black-1: #000000;
+
   --black-natural-1: #dbdbdb;
   --black-natural-2: #ffffff;
   --black-natural-3: #dfdfdf;

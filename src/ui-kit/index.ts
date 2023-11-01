@@ -7,6 +7,8 @@ import Modal from "./Modal";
 import {checkedInventory, emptyCheckedInventory, openCheckList, songGetInventory, fridgeOpenCloseDoor} from "./Song";
 import RadioButton from "./Button/RadioButton";
 import CommandButton from "./Button/CommonButton";
+import DialogCloud, {Position} from "./DialogCloud";
+import {getImage} from './Image/function'
 
 const Song = {
     songGetInventory,
@@ -34,19 +36,29 @@ const IconType = {
     Notebook,
 }
 
-const Images = {
-    AllThings,
+const ImageType = {
+    Things:AllThings,
+    Settings: IImageThings,
 }
 
+const ImageFn = {
+    getImage,
+}
+
+const DialogType = {
+    Position,
+}
 export {
     Background as Background,
     BackgroundType,
     Button as Button,
+    DialogCloud as DialogCloud,
+    DialogType,
     Icon as Icon,
     IconType,
     Image as Image,
-    IImageThings as Things,
-    Images,
+    ImageFn,
+    ImageType,
     Modal as Modal,
     Song as Song,
 }

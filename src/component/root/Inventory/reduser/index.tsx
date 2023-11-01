@@ -34,7 +34,7 @@ type InitialStateType = Omit<
 
 const initialState: InitialStateType = {
     usedInventory: new Set<string>([]),
-    inventory: new Set<string>(['cigarettes-pack', 'cheese']),
+    inventory: new Set<string>(['cigarettes-pack']),
     currentThing: '',
 };
 

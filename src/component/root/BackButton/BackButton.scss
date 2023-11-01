@@ -1,5 +1,12 @@
 .back-button {
   position: absolute;
-  top: 40px;
-  right: 200px;
+  bottom: 40px;
+  right: 20px;
+
+  &__back-bt-style {
+    border: var(--white-natural-1) !important;
+    background-color: var(--black-natural-1);
+    color: var(--white-natural-1) !important;
+  }
+
 }

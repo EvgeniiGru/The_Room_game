@@ -1,7 +1,33 @@
 .dialog {
   position: absolute;
-  width: 200px;
-  height: 200px;
   display: flex;
   padding: 4px 8px;
+  background-color: var(--always-black-1);
+  color: var(--always-white-1);
+  border-radius: 8px;
+
+  &:after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      width: 0;
+      height: 0;
+  }
+
+  &_left {
+    &:after {
+      left: 25px;
+      border-left: 13px solid var(--black-natural-1);
+      border-bottom: 12px solid transparent;
+    }
+  }
+
+  &_rihgt {
+    &:after {
+      right: 25px;
+      border-right: 13px solid var(--black-natural-1);
+      border-bottom: 12px solid transparent;
+    }
+  }
+
 }

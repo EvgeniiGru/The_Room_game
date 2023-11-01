@@ -33,7 +33,6 @@ const App = () => {
                 <InventoryProviderComponent>
                         {isVisibleInventory && (<Inventory/>)}
                         {isVisibleSettings && (<Settings setOpenedModal={setVisibleSettings}/>)}
-                        <Button.Command onClick={()=> {}} text={'Назад'}/>
                         <NextLocation urlLocation={propsLocation.leftLocation} revers={true} disable={propsLocation.leftLocation === ''}/>
                         <DisplayComponent/>
                         <NextLocation urlLocation={propsLocation.rightLocation} disable={propsLocation.rightLocation === ''}/>

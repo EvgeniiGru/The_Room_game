@@ -3,17 +3,20 @@ import './Inventory.scss'
 import b_ from 'b_'
 import React, {useEffect, useMemo, useState} from 'react';
 import useSound from 'use-sound';
-import {checkedInventory, emptyCheckedInventory} from "../../../ui-kit/Song";
+import {
+    Image,
+    ImageFn,
+    ImageType,
+    Song,
+} from 'rooms';
 import {useInventory} from "./reduser";
-import Image, {IImageThings} from "../../../ui-kit/Image";
-import {getImage} from "../../../ui-kit/Image/function";
 
 const b = b_.with('inventory');
 
 const Inventory = () => {
 
-    const [click] = useSound(checkedInventory,{sprite: {click: [0, 100]}});
-    const [empty] = useSound(emptyCheckedInventory, {sprite: {empty: [0, 100]}});
+    const [click] = useSound(Song.checkedInventory,{sprite: {click: [0, 100]}});
+    const [empty] = useSound(Song.emptyCheckedInventory, {sprite: {empty: [0, 100]}});
     const inventoryProps = useInventory();
     const [inventoryMap, setInventoryMap] = useState<string[]>(new Array(10).fill('*'));
 
@@ -24,7 +27,7 @@ const Inventory = () => {
     }, [inventoryProps.inventory])
 
     const inventoryMapComponent = useMemo(()=> inventoryMap.map((i, k) => {
-        const thingObj = getImage(i);
+        const thingObj = ImageFn.getImage(i);
         return <div key={`${k}_${i}`} onClick={() => {
             if (i === '*') {
                 empty({id: 'empty'});
@@ -36,7 +39,7 @@ const Inventory = () => {
             {checked: inventoryProps.currentThing === i, empty: i === '*'})
         }>
             <Image imgName={{
-                [IImageThings.THINGS]: thingObj.img
+                [ImageType.Settings.THINGS]: thingObj.img
             }}
             style={{width:50, height:65}}
                    isNight={true}

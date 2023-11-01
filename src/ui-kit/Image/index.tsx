@@ -1,12 +1,13 @@
 // @import *.scss
 
 import b_ from 'b_'
-import React, {BaseSyntheticEvent} from 'react'
+import React, {BaseSyntheticEvent, forwardRef, RefObject, useImperativeHandle} from 'react'
 import {
     IImageProps,
     IImageThings,
     AllThings,
 } from "./type";
+
 const b = b_.with('image');
 
 export {
@@ -21,20 +22,25 @@ const handleOpenDoor = (onClick: () => void, event: BaseSyntheticEvent) => {
     }
 }
 
-const Image = ({
+const Image = forwardRef( ({
     imgName = {},
     classNameContainer,
     classNameImg,
     children,
     isNight,
     onClick,
-    style ={}}: IImageProps ) => {
+    style ={}}: IImageProps, ref: RefObject<HTMLDivElement>) => {
     const width = style.width;
-    const height = style.height
-   return <div
+    const height = style.height;
+
+    useImperativeHandle(ref, ()=> {
+       return ref.current;
+    }, [ref]);
+
+   return (<div
+       ref={ref}
        className={classNameContainer}
-       onClick={(event)=> handleOpenDoor(onClick, event)}
-   >
+       onClick={(event)=> handleOpenDoor(onClick, event)}>
             <div
                style={{
                    width,
@@ -48,7 +54,7 @@ const Image = ({
            ].filter(Boolean).join(' ')}>
                     {children}
            </div>
-   </div>
-};
+   </div>)
+})
 
-export default React.memo(Image);
+export default React.memo(Image) ;

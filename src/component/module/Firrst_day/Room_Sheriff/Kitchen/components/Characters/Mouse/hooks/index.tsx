@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 
-export const useMousesMove = () => {
+export const useMikeMove = () => {
     const [motionHand, setMotionHand] = useState<boolean>(false);
     const [motionCheek, setMotionCheek] = useState<boolean>(false);
 

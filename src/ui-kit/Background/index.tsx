@@ -28,7 +28,9 @@ const Background = ({
     children,
     isNight,
               }: IBackground ) => {
-   return <div className={[
+   return <div
+       id={'background'}
+       className={[
         b({
             ...imgName
         }),
