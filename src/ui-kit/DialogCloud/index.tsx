@@ -16,6 +16,8 @@ const b = b_.with('dialog');
 export enum Position{
     LEFT='left',
     RIGHT = 'right',
+    DOWN_LEFT = 'down_left',
+    DOWN_RIGHT='down_right',
 }
 
 interface IDialogCloud {
@@ -47,6 +49,16 @@ const getCoords = (position: Position, childElement: DOMRect, dialogElement?: DO
                 left: childElement.x - dialogElement.width + childElement.width / 2,
                 top: childElement.y - dialogHeight - standardSizeDialogClouds + 10,
             }
+        case Position.DOWN_RIGHT:
+            return {
+                left: childElement.left + childElement.width / 2,
+                top: childElement.y + childElement.height + 10,
+            }
+        case Position.DOWN_LEFT:
+            return {
+                left: childElement.x - dialogElement.width + childElement.width / 2,
+                top: childElement.y + childElement.height + 10,
+            }
     }
 }
 
@@ -73,8 +85,9 @@ const DialogCloud = ({position, text, maxWidth, children}: IDialogCloud) => {
     const handleTriggerElementClick = useCallback((e: MouseEvent ) => {
         const { target } = e;
         if (target instanceof HTMLElement) {
-            const isTriggerObjClick = target === childrenRef.current ||
-                childrenRef.current.getElementsByClassName(target.className).length > 0;
+            const triggerElement = childrenRef.current.getElementsByClassName(target.className);
+            const isTriggerObjClick = triggerElement.length > 0 && triggerElement[0].className === target.className
+
             if(isTriggerObjClick){
               setOpen(prev => !isOpen ? !prev: true);
             } else {
@@ -84,8 +97,6 @@ const DialogCloud = ({position, text, maxWidth, children}: IDialogCloud) => {
     }, [])
 
     useLayoutEffect(()=> {
-        // const resizeObject = new ResizeObserver((e)=> setTimeout(()=>
-        //     handleChangeCoordinatesAccordingToScreenSize(e), 0));
         const resizeObject = new ResizeObserver(handleChangeCoordinatesAccordingToScreenSize);
         if(childrenRef && dialogRef.current){
             resizeObject.observe(childrenRef.current);
@@ -96,8 +107,8 @@ const DialogCloud = ({position, text, maxWidth, children}: IDialogCloud) => {
     }, [isOpen])
 
     useEffect(()=>{
-        if(childrenRef){
-            setCoords(getCoords(position, childrenRef.current.getBoundingClientRect()));
+        if(childrenRef && dialogRef){
+            setCoords(getCoords(position, childrenRef.current.getBoundingClientRect(), childrenRef.current.getBoundingClientRect()));
             document.addEventListener('mousedown',  handleTriggerElementClick)
         }
         return ()=> document.removeEventListener('mousedown', handleTriggerElementClick)

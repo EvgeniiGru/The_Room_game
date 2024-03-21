@@ -33,9 +33,13 @@ const App = () => {
                 <InventoryProviderComponent>
                         {isVisibleInventory && (<Inventory/>)}
                         {isVisibleSettings && (<Settings setOpenedModal={setVisibleSettings}/>)}
-                        <NextLocation urlLocation={propsLocation.leftLocation} revers={true} disable={propsLocation.leftLocation === ''}/>
+                        <NextLocation
+                            urlLocation={propsLocation.leftLocation}
+                            revers={true}
+                            disable={propsLocation.leftLocation === ''}/>
                         <DisplayComponent/>
-                        <NextLocation urlLocation={propsLocation.rightLocation} disable={propsLocation.rightLocation === ''}/>
+                        <NextLocation urlLocation={propsLocation.rightLocation}
+                                      disable={propsLocation.rightLocation === ''}/>
                     </InventoryProviderComponent>
             </div>
         </TaskSheetProviderComponent>

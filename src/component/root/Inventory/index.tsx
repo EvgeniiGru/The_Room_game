@@ -31,6 +31,7 @@ const Inventory = () => {
         return <div key={`${k}_${i}`} onClick={() => {
             if (i === '*') {
                 empty({id: 'empty'});
+                inventoryProps.checkThingInInventory('')
             } else {
                 click({id:'click'});
                 inventoryProps.checkThingInInventory(i);
@@ -46,7 +47,7 @@ const Inventory = () => {
             />
             <h4 className={b('description_thing')}>{thingObj.name}</h4>
         </div>
-    }), [inventoryMap, inventoryProps.currentThing])
+    }), [inventoryMap, inventoryProps.currentThing, click, empty])
 
     return <div className={b()}>
         <div className={b('button')}/>

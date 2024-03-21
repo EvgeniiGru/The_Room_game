@@ -22,9 +22,9 @@ const Mouse = () => {
 
     const {currentThing} = useInventory();
 
-    return <DialogCloud text={currentThing !== ''? 'Мне это определенно не нужно, так что забей':'Привет мир'}
+    return <DialogCloud text={currentThing === ''?'Привет мир': 'Мне это определенно не нужно, так что забей'}
                         maxWidth={200}
-                        position={DialogType.Position.LEFT}>
+                        position={DialogType.Position.DOWN_RIGHT}>
             <Image
                 classNameImg={image('body')}
                 classNameContainer={constructor('body')}>
