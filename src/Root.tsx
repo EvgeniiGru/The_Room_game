@@ -5,7 +5,6 @@ import {HashRouter} from "react-router-dom";
 import LocationProviderComponent from "./component/root/NextLocation/reducer";
 import ThemeProviderComponent from "./component/root/Settings/reduser";
 
-
 render(
     <HashRouter>
         <ThemeProviderComponent>

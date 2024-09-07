@@ -47,6 +47,10 @@ module.exports = {
                     "postcss-loader",
                 ]
             },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                type: 'asset/resource'
+            },
         ]
     },
     resolve: {
@@ -63,11 +67,12 @@ module.exports = {
         chunkFilename: "chunk.js",
     },
     devServer: {
+        open: true,
         static: {
             directory: path.join(__dirname, 'public'),
         },
         compress: true,
-        port: 3000,
+        port: 2000,
     },
     plugins: [
         new MiniCssExtractPlugin({

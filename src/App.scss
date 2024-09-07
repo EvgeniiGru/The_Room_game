@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Bowler';
+  src: url("/src/assets/fonts/Bowler.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Patsy Sans';
+  src: url("/src/assets/fonts/Patsy Sans.ttf") format("truetype");
+}
 
 html[data-theme='dark']{
   --always-white-1: #fcfcfc;
@@ -66,8 +75,10 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
-  font-family: cursive;
-
+  font-family: 'Bowler', sans-serif;
+}
+h1, h2, h3, h4, h5 {
+  margin: 0;
 }
 
 #root {
@@ -83,11 +94,13 @@ body {
   flex-direction: column;
 
   &__header {
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
     align-content: center;
-    background: inherit;
+    background-color: var(--black-natural-1);
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 999;
   }
 
   &__body {
@@ -99,7 +112,7 @@ body {
     position: relative;
 
     &_menu {
-      height: calc(100% - 20px);
+      height: 100%;
       align-items: flex-end;
     }
   }

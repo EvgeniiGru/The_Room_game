@@ -48,25 +48,25 @@
         }
     }
 
+    &__animation-block {
+        height: 121px !important;
+        width: 180px !important;
+    }
+
     &__element_inventory {
         display: flex;
         height: 121px;
         background: var(--black-natural-2);
         width: 180px;
         box-shadow: inset -1px 1px 17px 9px var(--box-shadow);
-        border-radius: 8px;
+        border-radius: 10px;
         cursor: pointer;
         flex-grow: 0;
         flex-shrink: 0;
         flex-direction: column;
+        font-family: 'Patsy Sans', sans-serif;
         align-items: center;
         justify-content: center;
-
-        &_checked {
-            border: 2px solid var(--white-natural-1);
-            height: 117px !important;
-            width: 176px !important;
-        }
 
         &_empty {
             cursor:not-allowed;

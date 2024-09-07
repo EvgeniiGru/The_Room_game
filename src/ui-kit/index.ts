@@ -8,7 +8,17 @@ import {checkedInventory, emptyCheckedInventory, openCheckList, songGetInventory
 import RadioButton from "./Button/RadioButton";
 import CommandButton from "./Button/CommonButton";
 import DialogCloud, {Position} from "./DialogCloud";
-import {getImage} from './Image/function'
+import {getImage} from './Image/function';
+import NeonLights from './Animation/NeonLights';
+import {getNeonLights} from './Animation/function'
+
+const Animation = {
+    NeonLights,
+}
+
+const AnimationFn = {
+    getNeonLights,
+}
 
 const Song = {
     songGetInventory,
@@ -49,6 +59,8 @@ const DialogType = {
     Position,
 }
 export {
+    Animation,
+    AnimationFn,
     Background as Background,
     BackgroundType,
     Button as Button,

@@ -3,8 +3,8 @@ module.exports = {
      [
          'autoprefixer',
          {
-          browsers: [
-              'last 1 version'
+             overrideBrowserslist: [
+              'last 2 version'
           ]
          }
       ],

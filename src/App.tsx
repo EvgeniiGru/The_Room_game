@@ -5,9 +5,8 @@ import React from "react";
 import Inventory from "./component/root/Inventory/index";
 import DisplayComponent from "./component/root/GameSpace";
 import Header from "./component/root/Header";
-import InventoryProviderComponent from "./component/root/Inventory/reduser";
+import InventoryProviderComponent,  from "./component/root/Inventory/reduser";
 import TaskSheetProviderComponent from "./component/root/TaskSheet/reduser";
-import {Button} from 'rooms';
 import NextLocation from "./component/root/NextLocation";
 import {useLocation} from "./component/root/NextLocation/reducer";
 import Settings from "./component/root/Settings";
@@ -32,7 +31,7 @@ const App = () => {
             <div className={b('body', {menu: !isVisibleMenu})}>
                 <InventoryProviderComponent>
                         {isVisibleInventory && (<Inventory/>)}
-                        {isVisibleSettings && (<Settings setOpenedModal={setVisibleSettings}/>)}
+                        <Settings isOpenModal={isVisibleSettings} setOpenedModal={setVisibleSettings}/>
                         <NextLocation
                             urlLocation={propsLocation.leftLocation}
                             revers={true}

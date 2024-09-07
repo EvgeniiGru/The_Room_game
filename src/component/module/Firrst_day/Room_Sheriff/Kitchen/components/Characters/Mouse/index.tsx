@@ -24,7 +24,7 @@ const Mouse = () => {
 
     return <DialogCloud text={currentThing === ''?'Привет мир': 'Мне это определенно не нужно, так что забей'}
                         maxWidth={200}
-                        position={DialogType.Position.DOWN_RIGHT}>
+                        position={DialogType.Position.LEFT}>
             <Image
                 classNameImg={image('body')}
                 classNameContainer={constructor('body')}>

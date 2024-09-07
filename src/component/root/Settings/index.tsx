@@ -9,14 +9,15 @@ import {Theme} from "./type";
 const settingsStyle = b_.with('settings');
 
 interface ISettings{
+    isOpenModal: boolean,
     setOpenedModal: (arg: boolean) => void,
 }
 
-const Settings = ({setOpenedModal}: ISettings) => {
+const Settings = ({isOpenModal, setOpenedModal}: ISettings) => {
 
     const {theme, changeTheme} = useTheme();
 
-    return <Modal onClick={() => setOpenedModal(false)}>
+    return <Modal isOpen={isOpenModal} onClick={() => setOpenedModal(false)}>
         <div className={settingsStyle()}>
             <h3 className={settingsStyle('title')}>Настройки</h3>
             <div className={settingsStyle('item-setting-block')}>

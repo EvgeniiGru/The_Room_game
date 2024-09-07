@@ -13,13 +13,14 @@ const TaskList = () => {
     const [openSong] = useSound(Song.openCheckList, {sprite: {openSong: [100, 500]}});
 
     const taskSheetComponent = useMemo(()=> taskProps.taskSheet.map(task => (
-     <div className={b('element-task')}>
-        <h4 className={b('text', {cross: task.isActive})}>{task.name}</h4>
+     <div key={task.name} className={b('element-task')}>
+        <h4 className={b('text', {cross: !task.isActive})}>{task.name}</h4>
     </div>
     )), [] )
 
-    return <>
-        {taskProps.isOpen && (<Modal
+    return <Modal
+           onAnimation={true}
+           isOpen={taskProps.isOpen}
            onClick={() => {
                openSong({id: 'openSong'});
                taskProps.setOpenedTaskSheet(taskProps.isOpen);
@@ -30,11 +31,13 @@ const TaskList = () => {
             <div className={b('title')}>
                 <h2 className={b('text')}>Задания</h2>
             </div>
-            <div className={b('block-task')}>
-                {taskSheetComponent}
+            <div className={b('task')}>
+                <div className={b('block-task')}>
+                    {taskSheetComponent}
+                </div>
             </div>
         </div>
-    </Modal>)}</>
+    </Modal>
 };
 
 export default React.memo(TaskList);

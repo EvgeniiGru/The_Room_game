@@ -1,0 +1,12 @@
+.neon-lights {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  position: relative;
+  padding: var(--neon-lights-border-size);
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
