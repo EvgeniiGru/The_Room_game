@@ -22,6 +22,13 @@ export enum Color {
     Black = 'black',
 }
 
+export enum IconSize {
+    SMALL = 16,
+    MEDIUM = 18,
+    LARGE = 20,
+    FULL = 32,
+}
+
 export interface IMods {
     [Mods.Arrow]?: boolean,
     [Mods.Notebook]?: Notebook,
@@ -34,4 +41,5 @@ export interface IMods {
 export interface IIcon {
     mods?: IMods,
     className?: string,
+    size?: number | IconSize
 }

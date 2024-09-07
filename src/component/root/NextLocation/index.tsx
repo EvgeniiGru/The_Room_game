@@ -1,7 +1,7 @@
 import './NextLocation.scss';
 
 import b_ from 'b_';
-import React from "react";
+import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 import {Button, IconType} from "rooms";
 
@@ -15,16 +15,21 @@ interface INextLocation {
 
 const NextLocation = ({urlLocation, revers, disable}:INextLocation) => {
     const history = useHistory();
+    const [isHover, setHover ] = useState<boolean>(false)
+
     return <div className={b( {revers})}>
-        <div className={b('next-location-block ')}>
+        <div className={b('next-location-block ')}
+             onMouseEnter={()=> {setHover(true)}}
+             onMouseLeave={()=> setHover(false)}
+        >
             <Button.Icon
                 disable={disable}
                 className={b('block-location', {revers})}
                 onClick={() => history.push(urlLocation)}
                 mods={{
                     [IconType.Mods.Arrow]: true,
-                    [IconType.SettingIcon.Color]: disable ? IconType.Color.Gray : IconType.Color.White,
-                    [IconType.SettingIcon.HoverColor]: disable ? IconType.Color.Gray : IconType.Color.Red
+                    [IconType.SettingIcon.Color]: isHover ? IconType.Color.Red : IconType.Color.White,
+                    [IconType.SettingIcon.HoverColor]:IconType.Color.Red,
              }}
             />
         </div>

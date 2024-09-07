@@ -16,6 +16,7 @@
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "react-router-dom": "5.3.4",
+    "require.js": "^1.0.0",
     "svg-url-loader": "^8.0.0",
     "typescript": "^5.0.4",
     "use-sound": "^4.0.1"

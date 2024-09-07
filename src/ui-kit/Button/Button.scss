@@ -1,0 +1,24 @@
+.button {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  border: 2px solid var(--gray-natural-medium);
+  color: var(--gray-natural-medium);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+
+    &_size {
+      &_small {
+        width: 24px;
+      }
+
+      &_medium {
+        width: 32px;
+      }
+
+      &_large {
+        width: 40px;
+      }
+    }
+  }

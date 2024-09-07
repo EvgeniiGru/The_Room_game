@@ -1,8 +1,7 @@
 .radio-button {
-  &__block-radio-bt{
+  &__block-radio-bt {
     display: flex;
     width: 50px;
-    height: 30px;
     padding: 0px 1px;
     border-radius: 30px;
     border: 1px solid var(--gray-natural-light);
@@ -12,6 +11,20 @@
     align-items: center;
     box-shadow: inset 0px -1px 9px 0px var(--box-shadow);
     cursor: pointer;
+
+    &_size{
+      &_small {
+        height: 24px;
+      }
+
+      &_medium {
+        height: 32px;
+      }
+
+      &_large {
+        height: 40px;
+      }
+    }
 
   }
 
@@ -29,6 +42,24 @@
     &_active {
       margin-left: 21px;
     }
+
+    &_size{
+      &_small {
+        height: 22px;
+        width: 22px;
+      }
+
+      &_medium {
+        height: 30px;
+        width: 30px;
+      }
+
+      &_large {
+        height: 38px;
+        width: 38px;
+      }
+    }
+
   }
 
 

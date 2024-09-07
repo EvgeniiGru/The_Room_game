@@ -1,42 +1,39 @@
 import './IconButton.scss'
 
 import b_ from 'b_';
-import React from "react";
+import React, {FC} from "react";
 import Icon from "../../Icon";
-import {IMods} from "../../Icon/type";
-import {handleOnClick} from "../../function/indes";
+import {handleFnEvent} from "../../function";
+import {ButtonIconProps, localizationButtonIconSize} from "./IconButton.types";
+import {ButtonSize} from "../Button.types";
 
 const b = b_.with('icon-bt');
 
-interface IIconButton {
-    mods?: IMods,
-    className?: string,
-    classNameIcon?: string,
-    disable?: boolean,
-    text?: string,
-    onClick: () => void,
-    style?:{
-        border?: boolean,
-    },
-}
-
-const IconButton = ({
+const IconButton: FC<ButtonIconProps> = ({
+    onMouseLeave,
+    onMouseEnter,
     onClick,
     mods={},
     className,
     classNameIcon,
     disable,
-                    }:IIconButton) =>
+    style,
+    children,
+    size= ButtonSize.MEDIUM
+}) =>
     (<div className={[
-        b( ),
+        b({disable, size}),
         className,
     ].join(' ')}
-    onClick= {(event)=> handleOnClick({onClick, disable, event})}
+          onClick= {(event)=> handleFnEvent({fn:onClick, disable, event})}
+          onMouseEnter= {(event)=> handleFnEvent({fn:onMouseEnter, disable, event})}
+          onMouseLeave= {(event)=> handleFnEvent({fn:onMouseLeave, disable, event})}
     >
         <Icon
+            size={localizationButtonIconSize[size]}
             mods={mods}
             className={[
-                b('icon', {disable}),
+                b('icon'),
                 classNameIcon,
             ].join(' ')}
         />

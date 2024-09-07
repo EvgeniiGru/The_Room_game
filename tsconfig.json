@@ -15,12 +15,12 @@
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "paths": {
-      "rooms": ["./src/ui-kit/index.ts"]
+      "rooms": ["./src/ui-kit/index.ts"],
+      "src": ["./src"]
     },
     "types": [
       "node",
-      "webpack-env",
-      "./node-modules/@types"
+      "webpack-env"
     ],
     "typeRoots": [
       "./@types",

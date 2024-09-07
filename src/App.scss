@@ -42,8 +42,8 @@ html[data-theme='light']{
   --always-white-1: #d2d2d2;
   --always-black-1: #000000;
 
-  --black-natural-1: #dbdbdb;
-  --black-natural-2: #ffffff;
+  --black-natural-2: #dbdbdb;
+  --black-natural-1: #ffffff;
   --black-natural-3: #dfdfdf;
 
   --gray-natural-dark: #8f8e8e;
@@ -104,8 +104,9 @@ h1, h2, h3, h4, h5 {
   }
 
   &__body {
+    //background-color: var(--black-natural-2);
     display: inline-flex;
-    height: calc(100% - 80px);
+    height: calc(100% - 60px);
     width: 100%;
     justify-content: center;
     align-items: flex-start;

@@ -21,7 +21,7 @@ interface IModal {
     onAnimation?: boolean,
 }
 
-const DURATION_ANIMATION_MODAL_WIN = 800;
+const DURATION_ANIMATION_MODAL_WIN = 500;
 
 const Modal = ({children, onClick, classContainer, isOpen, onAnimation}:IModal) => {
     const refModalWin = useRef<HTMLDivElement>(null);
@@ -92,6 +92,7 @@ const Modal = ({children, onClick, classContainer, isOpen, onAnimation}:IModal) 
 
     return <>{isMountElement &&(
         <div ref = {refModalWin}
+
         className={b('background', {blur: !onAnimation})}>
             <div
                 ref={refModalWinContainer}

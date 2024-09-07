@@ -2,9 +2,10 @@ import './Header.scss';
 
 import b_ from 'b_'
 import React from "react";
-import {Button, Song, IconType, Modal} from 'rooms';
+import {Button, IconType, Song} from 'rooms';
 import useSound from "use-sound";
 import {useTaskSheet} from "../TaskSheet/reduser";
+import {ButtonSize} from "../../../ui-kit/Button/Button.types";
 
 const b = b_.with('header');
 
@@ -19,7 +20,9 @@ const Header = ({isVisibleSettings, setVisibleSettings}: IHeader) => {
         {sprite: {openSong: [100, 500]}});
 
     return (<div className={b()}>
-        {!isVisibleSettings && (<Button.Icon mods={{
+        {!isVisibleSettings && (<Button.Icon
+            size={ButtonSize.LARGE}
+            mods={{
             [IconType.Mods.Notebook]: taskProps.isOpen ? IconType.Notebook.Close : IconType.Notebook.Open,
             [IconType.SettingIcon.Color]: taskProps.isOpen ? IconType.Color.White : IconType.Color.Gray,
             [IconType.SettingIcon.HoverColor]: !taskProps.isOpen ? IconType.Color.White : IconType.Color.Red,
@@ -28,9 +31,10 @@ const Header = ({isVisibleSettings, setVisibleSettings}: IHeader) => {
                           taskProps.setOpenedTaskSheet(taskProps.isOpen);
                           openSong({id: 'openSong'});
                       }}
-                      className={b('icon-bt')}
-                      classNameIcon={b('icon')}/>)}
+                     />)
+        }
         {!taskProps.isOpen && (<Button.Icon
+            size={ButtonSize.LARGE}
             classNameIcon={b('icon-setting')}
             onClick={() => {
             setVisibleSettings(!isVisibleSettings);

@@ -20,7 +20,7 @@ export const ButtonBack = () => {
         {domReady && createPortal(<div
                 className={b()}
             >
-                <Button.Command className={b('back-bt-style')}
+                <Button className={b('back-bt-style')}
                                 onClick={()=>{history.goBack()}}
                                 text={'Назад'}/>
             </div>,

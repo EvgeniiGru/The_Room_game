@@ -8,6 +8,7 @@ import {
     SettingIcon,
     Color,
     Notebook,
+    IconSize,
 } from "./type";
 
 export {
@@ -22,11 +23,17 @@ const b = b_.with('icon');
 const Icon = ({
     mods = {},
     className,
-}: IIcon) => (<div className={[
+    size=IconSize.FULL
+}: IIcon) => (<div
+    style = {{
+        height:`${size}px`,
+        width:`${size}px`
+    }}
+    className={[
         b({
                 ...mods
             }),
-            className
+            className,
     ].filter(Boolean).join(' ')}/>);
 
 export default Icon;

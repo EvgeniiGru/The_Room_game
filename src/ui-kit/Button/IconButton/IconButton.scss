@@ -3,16 +3,26 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  height: 32px;
-  width: 32px;
-  gap: 8px;
+  border:1px solid var(--gray-natural-medium);
+  border-radius: 12px;
 
-  &__icon {
-    &_disable {
-      cursor: not-allowed;
-      &:hover{
-        background-color: inherit;
-      }
+  &_disable {
+    cursor: not-allowed;
+  }
+  &_size{
+    &_small{
+      height: 24px;
+      width: 24px;
+    }
+
+    &_medium {
+      height: 32px;
+      width: 32px;
+    }
+
+    &_large {
+      height: 40px;
+      width: 40px;
     }
   }
 }
