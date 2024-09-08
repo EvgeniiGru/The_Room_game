@@ -5,11 +5,14 @@
   align-items: center;
   justify-content: space-between;
 
-  &__icon-setting {
-    transform: rotate(0deg);
-    transition: all .5s;
-    &:hover {
-    transform: rotate(360deg);
-  }
-  }
+  &__icon-bt-setting {
+    div {
+      transform: rotate(0deg);
+    }
+        &:hover {
+          div{
+            transform: rotate(360deg);
+          }
+        }
+    }
 }

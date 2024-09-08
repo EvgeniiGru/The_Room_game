@@ -1,7 +1,11 @@
 // @import *.scss
 
 import b_ from 'b_'
-import React from 'react';
+import React, {
+    RefAttributes,
+    ForwardRefExoticComponent,
+    RefObject
+} from 'react';
 import {
     IIcon,
     Mods,
@@ -10,6 +14,7 @@ import {
     Notebook,
     IconSize,
 } from "./type";
+import {useImperativeHandle} from "react";
 
 export {
     Mods,
@@ -20,20 +25,30 @@ export {
 
 const b = b_.with('icon');
 
-const Icon = ({
+const Icon: ForwardRefExoticComponent<IIcon & RefAttributes<HTMLDivElement>> = React.forwardRef( ({
     mods = {},
     className,
     size=IconSize.FULL
-}: IIcon) => (<div
-    style = {{
-        height:`${size}px`,
-        width:`${size}px`
-    }}
-    className={[
-        b({
+}:IIcon, ref: RefObject<HTMLDivElement>) => {
+    useImperativeHandle(
+        ref,
+        () => {
+            return ref.current;
+        },
+        []
+    );
+   return (<div
+       ref={ref}
+        style={{
+            height: `${size}px`,
+            width: `${size}px`
+        }}
+        className={[
+            b({
                 ...mods
             }),
             className,
-    ].filter(Boolean).join(' ')}/>);
+        ].filter(Boolean).join(' ')}/>)
+});
 
 export default Icon;

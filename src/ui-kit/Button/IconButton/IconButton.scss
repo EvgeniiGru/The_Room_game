@@ -3,12 +3,25 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border:1px solid var(--gray-natural-medium);
+  border: 2px solid var(--gray-natural-medium);
   border-radius: 12px;
+  border-color: var(--border-color-bt);
 
+  div {
+    background-color: var(--border-color-bt);
+    transition:all 500ms;
+  }
+
+  &:hover {
+    border-color: var(--hover-border-color-bt);
+    div {
+      background-color: var(--hover-border-color-bt) !important;
+    }
+  }
   &_disable {
     cursor: not-allowed;
   }
+
   &_size{
     &_small{
       height: 24px;
@@ -25,4 +38,7 @@
       width: 40px;
     }
   }
+
+
+
 }

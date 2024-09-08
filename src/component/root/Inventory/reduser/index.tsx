@@ -1,10 +1,9 @@
 import React, {
     createContext,
-    ReactChild,
-    ReactChildren,
     useContext,
     useReducer
 } from "react";
+import { AuxPropsChildren } from "../../type";
 
 enum TCommonOperations {
     INVENTORY_MAP = 'INVENTORY_MAP',
@@ -62,11 +61,6 @@ const reducer = (state: InitialStateType, action: typeActions): InitialStateType
             return state
     }
 }
-
-interface AuxPropsChildren {
-    children: ReactChild | ReactChild[] | ReactChildren | ReactChildren[];
-}
-
 const InventoryProvider = createContext<Inventory | null>(null);
 
 export const useInventory = () => {

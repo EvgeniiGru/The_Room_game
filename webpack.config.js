@@ -8,6 +8,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
     entry: "./src/Root.tsx",
     mode: "development",
+    optimization: {
+        runtimeChunk: 'single'
+    },
     module: {
         rules: [
             {

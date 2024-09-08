@@ -25,7 +25,7 @@ const Header = ({isVisibleSettings, setVisibleSettings}: IHeader) => {
             mods={{
             [IconType.Mods.Notebook]: taskProps.isOpen ? IconType.Notebook.Close : IconType.Notebook.Open,
             [IconType.SettingIcon.Color]: taskProps.isOpen ? IconType.Color.White : IconType.Color.Gray,
-            [IconType.SettingIcon.HoverColor]: !taskProps.isOpen ? IconType.Color.White : IconType.Color.Red,
+            [IconType.SettingIcon.HoverColor]: IconType.Color.Red
         }}
                       onClick={() => {
                           taskProps.setOpenedTaskSheet(taskProps.isOpen);
@@ -35,7 +35,7 @@ const Header = ({isVisibleSettings, setVisibleSettings}: IHeader) => {
         }
         {!taskProps.isOpen && (<Button.Icon
             size={ButtonSize.LARGE}
-            classNameIcon={b('icon-setting')}
+            className={b('icon-bt-setting')}
             onClick={() => {
             setVisibleSettings(!isVisibleSettings);
         }}

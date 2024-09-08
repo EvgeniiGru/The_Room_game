@@ -34,8 +34,6 @@ const Modal = ({children, onClick, classContainer, isOpen, onAnimation}:IModal) 
             const firstPosition = isOpen ? 0 : 100;
             const currentElement = refModalWin.current;
             const durationAnimation = isOpen? 0 : DURATION_ANIMATION_MODAL_WIN;
-            debugger
-            const f = currentElement.classList;
             currentElement.style.setProperty('--translateY-modal', `${isOpen ? -100: 0}%`);
             currentElement.style.setProperty('--transition-duration-modal', `${durationAnimation}ms`);
             currentElement.style.setProperty('--blur-modal', `${isOpen ? 0 : 10}px`);
