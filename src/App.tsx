@@ -1,9 +1,9 @@
 import './App.scss'
 
 import b_ from 'b_'
-import React from "react";
+import React, {lazy, Suspense} from "react";
 import Inventory from "./component/root/Inventory/index";
-import DisplayComponent from "./component/root/GameSpace";
+// import DisplayComponent from "./component/root/GameSpace";
 import Header from "./component/root/Header";
 import InventoryProviderComponent  from "./component/root/Inventory/reduser";
 import TaskSheetProviderComponent from "./component/root/TaskSheet/reduser";
@@ -12,7 +12,8 @@ import {useLocation} from "./component/root/NextLocation/reducer";
 import Settings from "./component/root/Settings";
 import {useApp} from "./hooks/App";
 import { ColorConfig } from './ui-kit/ColorConfig';
-import {useTheme} from "./component/root/Settings/reduser";
+
+const Content = lazy(()=> import('./component/root/GameSpace'))
 
 const b = b_.with('work-space');
 
@@ -39,7 +40,9 @@ const App = () => {
                                 urlLocation={propsLocation.leftLocation}
                                 revers={true}
                                 disable={propsLocation.leftLocation === ''}/>
-                            <DisplayComponent/>
+                                <Suspense fallback={'Загрузка'}>
+                                    <Content/>
+                                </Suspense>
                             <NextLocation urlLocation={propsLocation.rightLocation}
                                           disable={propsLocation.rightLocation === ''}/>
                         </InventoryProviderComponent>

@@ -2,6 +2,7 @@ import './NeonLights.scss';
 
 import b_ from 'b_';
 import React, {
+    FC,
     useEffect,
     useRef,
 } from 'react';
@@ -17,7 +18,7 @@ interface INeonLights extends AuxPropsChildren{
     off?: boolean
 };
 
-const NeonLights = ({children, borderSize, classNames, settings, off}:INeonLights) => {
+const NeonLights: FC<INeonLights> = ({children, borderSize, classNames, settings, off}) => {
     const refNeonLights = useRef<HTMLDivElement>(null);
     useEffect(()=>{
         const current = refNeonLights.current;

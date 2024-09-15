@@ -8,6 +8,11 @@
   src: url("/src/assets/fonts/Patsy Sans.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: 'HangingLettersG';
+  src: url("/src/assets/fonts/HangingLettersG.otf") format("truetype");
+}
+
 html[data-theme='dark']{
   --always-white-1: #fcfcfc;
   --always-black-1: #000000;

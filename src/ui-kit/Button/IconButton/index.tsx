@@ -7,6 +7,7 @@ import {handleFnEvent} from "../../function";
 import {ButtonIconProps, localizationButtonIconSize} from "./IconButton.types";
 import {ButtonSize} from "../Button.types";
 import {useColorConfig} from "../../ColorConfig";
+import {Animation} from 'rooms'
 
 const b = b_.with('icon-bt');
 //TODO переделать глобальную переменую рендер функции
@@ -46,26 +47,29 @@ const IconButton: FC<ButtonIconProps> = ({
     // }, [mods])
 
 
-   return (<div
-       ref={refButton}
-       className={[
-        b({disable, size}),
-        className,
-    ].join(' ')}
-          onClick={(event) => handleFnEvent({fn: onClick, disable, event})}
-          onMouseEnter={(event) => handleFnEvent({fn: onMouseEnter, disable, event})}
-          onMouseLeave={(event) => handleFnEvent({fn: onMouseLeave, disable, event})}
-    >
-        <Icon
-            ref = {refIcon}
-            size={localizationButtonIconSize[size]}
-            mods={mods}
-            className={[
-                b('icon'),
-                classNameIcon,
-            ].join(' ')}
-        />
-    </div>)
+   return (
+       <Animation.DropLight borderSize={2}>
+           <div
+           ref={refButton}
+           className={[
+            b({disable, size}),
+            className,
+        ].join(' ')}
+              onClick={(event) => handleFnEvent({fn: onClick, disable, event})}
+              onMouseEnter={(event) => handleFnEvent({fn: onMouseEnter, disable, event})}
+              onMouseLeave={(event) => handleFnEvent({fn: onMouseLeave, disable, event})}
+        >
+            <Icon
+                ref = {refIcon}
+                size={localizationButtonIconSize[size]}
+                mods={mods}
+                className={[
+                    b('icon'),
+                    classNameIcon,
+                ].join(' ')}
+            />
+        </div>
+       </Animation.DropLight>)
 }
 
 export default IconButton;

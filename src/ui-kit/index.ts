@@ -9,9 +9,11 @@ import {getImage} from './Image/function';
 import NeonLights from './Animation/NeonLights';
 import {getNeonLights} from './Animation/function'
 import RoomButton from "./Button";
+import DropLight from "./Animation/DropLight";
 
 const Animation = {
     NeonLights,
+    DropLight
 }
 
 const AnimationFn = {
