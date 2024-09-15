@@ -18,6 +18,7 @@
     height: 65px;
     background-color: var(--black-natural-2);
     border-radius: 0px 32px 32px 0;
+    border-left: none;
 
       &_revers {
         transform: rotate(180deg);

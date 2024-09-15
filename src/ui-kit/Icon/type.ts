@@ -1,8 +1,10 @@
 export enum Mods {
     Arrow = 'arrow',
     Notebook = 'notebook',
+    Moon = 'moon',
+    Sun = 'sun',
     Cross = 'cross',
-    Setting = 'setting'
+    Setting = 'setting',
 }
 
 export enum Notebook {
@@ -36,6 +38,8 @@ export interface IMods {
     [SettingIcon.Color]?: Color,
     [SettingIcon.HoverColor]?: Color,
     [Mods.Cross]?: boolean,
+    [Mods.Moon]?: boolean,
+    [Mods.Sun]?: boolean,
 }
 
 export interface IIcon {

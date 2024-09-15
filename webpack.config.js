@@ -51,7 +51,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                test: /\.(eot|svg|ttf|woff|woff2|otf)$/,
                 type: 'asset/resource'
             },
         ]
@@ -65,10 +65,9 @@ module.exports = {
     },
     devtool: 'source-map',
     output: {
-        path: path.resolve(__dirname, "dist/"),
-        publicPath: "/dist/",
-        filename: "bundle.js",
-        chunkFilename: "chunk.js",
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[id][name].[hash:8].js',
+        chunkFilename: '[id].[hash:8].js'
     },
     devServer: {
         open: true,

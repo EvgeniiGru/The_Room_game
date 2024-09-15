@@ -1,66 +1,123 @@
 .radio-button {
+
   &__block-radio-bt {
     display: flex;
-    width: 50px;
-    padding: 0px 1px;
     border-radius: 30px;
-    border: 1px solid var(--gray-natural-light);
+    border: 2px solid var(--gray-natural-medium);
     background: var(--black-natural-1);
     transition: all .5s;
     justify-content: flex-start;
     align-items: center;
     box-shadow: inset 0px -1px 9px 0px var(--box-shadow);
     cursor: pointer;
+    position: relative;
+    width: var(--width-radio-bt);
 
     &_size{
       &_small {
-        height: 24px;
+        min-height: 20px;
       }
 
       &_medium {
-        height: 32px;
+        min-height: 24px;
       }
 
       &_large {
-        height: 40px;
+        min-height: 28px;
       }
     }
+    div{
+      transition-duration: .4s;
+    }
 
+    &:hover {
+        border-color: var(--hover-border-color-radio-bt);
+        box-shadow: inset 0px -1px 9px 0px var(--box-shadow),
+                  0px 0px 5px 0px var(--hover-border-color-radio-bt);
+      div {
+        border-color: var(--hover-circle-color-radio-bt);
+      }
+    }
   }
 
   &__circle{
-    display: flex;
-    height: 28px;
-    width: 28px;
-    margin-left: 0;
-    transition: all .2s;
+    height: var(--width-radio-bt-circle);
+    width: var(--width-radio-bt-circle);
+    transition: all .4s;
     border-radius: 100%;
-    background: repeating-radial-gradient(circle,
-    var(--black-natural-1), var(--white-natural-1) 4px,
-    transparent 5px, transparent 4px);
+    border: 2px solid var(--gray-natural-medium);
+    margin-left: var(--margin-left-circle-radio-bt);
+    z-index: var(--z-index-button);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    &_active {
-      margin-left: 21px;
+    &_animation-run {
+      animation: 1s circle ease-in-out;
     }
+  }
 
+  &__prefix {
+    font-size: .8rem;
+    transition: all .2s ease-in-out;
+    position: absolute;
+    display: flex;
+    left: 8px;
+    z-index: var(--z-index-backgound);
+    &_hidden{
+       opacity: 0;
+    }
     &_size{
       &_small {
-        height: 22px;
-        width: 22px;
+        min-height: 20px;
       }
 
       &_medium {
-        height: 30px;
-        width: 30px;
+        min-height: 24px;
       }
 
       &_large {
-        height: 38px;
-        width: 38px;
+        min-height: 28px;
       }
     }
-
   }
 
+  &__suffix {
+    font-size: .8rem;
+    transition: all .2s ease-in-out;
+    position: absolute;
+    display: flex;
+    right: 8px;
+    z-index: var(--z-index-backgound);
+    &_hidden {
+      opacity: 0;
+    }
+  }
+
+}
+
+@keyframes circle {
+  0%{
+    transform: scaleY(0.8);
+  }
+  10%{
+    transform: scaleY(0.6);
+  }
+  50%{
+    transform: scaleX(0.8);
+  }
+  70%{
+    transform: scale(0.9);
+  }
+  90%{
+    transform: scaleY(1);
+  }
+  95%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scaleY(1);
+
+  }
 
 }

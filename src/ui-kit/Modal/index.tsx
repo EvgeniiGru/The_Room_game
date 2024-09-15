@@ -66,7 +66,7 @@ const Modal = ({children, onClick, classContainer, isOpen, onAnimation}:IModal) 
         if(isMountElement){
             if (refModalWinContainer.current !== null && refCross.current !== null){
                 const { width } = refModalWinContainer.current.getBoundingClientRect();
-                refCross.current.style.setProperty('--margin-modal-cross', `${width - 40}px`);
+                refCross.current.style.setProperty('--margin-modal-cross', `${width - 50}px`);
             }
             animationFunctionModalWin(true);
         } else if(isMountElement !== isOpen){

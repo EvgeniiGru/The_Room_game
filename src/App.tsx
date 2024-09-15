@@ -24,10 +24,9 @@ const App = () => {
         isVisibleMenu,
         setVisibleSettings,
     } = useApp();
-    const {theme} = useTheme();
 
     return <div className={b()}>
-        <ColorConfig.Provider value={{config: {colorPrimary: 'green'}}}>
+        <ColorConfig.Provider value={{config: {colorPrimary: 'var(--white-natural-1)'}}}>
             <TaskSheetProviderComponent>
                 {isVisibleMenu && (<div className={b('header')}>
                     <Header setVisibleSettings={setVisibleSettings} isVisibleSettings={isVisibleSettings} />

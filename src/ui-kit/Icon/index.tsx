@@ -44,10 +44,10 @@ const Icon: ForwardRefExoticComponent<IIcon & RefAttributes<HTMLDivElement>> = R
             width: `${size}px`
         }}
         className={[
+            className,
             b({
                 ...mods
             }),
-            className,
         ].filter(Boolean).join(' ')}/>)
 });
 

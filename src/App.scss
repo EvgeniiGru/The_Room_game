@@ -12,8 +12,8 @@ html[data-theme='dark']{
   --always-white-1: #fcfcfc;
   --always-black-1: #000000;
 
-  --black-natural-2: #1c1c1c;
   --black-natural-1: #000000;
+  --black-natural-2: #1c1c1c;
   --black-natural-3: #232323;
   --gray-natural-dark: #313131;
   --gray-natural-medium: #3e3e3e;
@@ -47,10 +47,10 @@ html[data-theme='light']{
   --black-natural-3: #dfdfdf;
 
   --gray-natural-dark: #8f8e8e;
-  --gray-natural-medium: #272727;
+  --gray-natural-medium: #636363;
   --gray-natural-light: #838383;
 
-  --white-natural-1: #1c1c1c;
+  --white-natural-1: #000000;
   --modal-background: #d2d2d2;
 
   --dark-red-natural-1: #fd0000;
@@ -104,13 +104,15 @@ h1, h2, h3, h4, h5 {
   }
 
   &__body {
-    //background-color: var(--black-natural-2);
+    background-color: var(--black-natural-2);
     display: inline-flex;
-    height: calc(100% - 60px);
+    height: calc(100% - 70px);
     width: 100%;
     justify-content: center;
     align-items: flex-start;
     position: relative;
+    padding-top: 10px;
+
 
     &_menu {
       height: 100%;
