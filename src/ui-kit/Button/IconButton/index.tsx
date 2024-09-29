@@ -1,13 +1,14 @@
 import './IconButton.scss'
 
 import b_ from 'b_';
-import React, {FC, useEffect, useState, useRef, useLayoutEffect} from "react";
-import Icon, {Color, SettingIcon} from "../../Icon";
+import React, {FC, useRef, useLayoutEffect, memo} from "react";
+import Icon from "../../Icon";
 import {handleFnEvent} from "../../function";
 import {ButtonIconProps, localizationButtonIconSize} from "./IconButton.types";
 import {ButtonSize} from "../Button.types";
 import {useColorConfig} from "../../ColorConfig";
 import {Animation} from 'rooms'
+
 
 const b = b_.with('icon-bt');
 //TODO переделать глобальную переменую рендер функции
@@ -48,7 +49,7 @@ const IconButton: FC<ButtonIconProps> = ({
 
 
    return (
-       <Animation.DropLight borderSize={2}>
+       <Animation.DropLight time={500} borderSize={1} color={colorPrimary}>
            <div
            ref={refButton}
            className={[
@@ -72,4 +73,4 @@ const IconButton: FC<ButtonIconProps> = ({
        </Animation.DropLight>)
 }
 
-export default IconButton;
+export default memo(IconButton);

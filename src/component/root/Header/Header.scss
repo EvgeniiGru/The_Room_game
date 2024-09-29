@@ -5,6 +5,11 @@
   align-items: center;
   justify-content: space-between;
 
+  &__title-head {
+    font-family: HangingLettersG, sans-serif;
+    color: var(--white-natural-1);
+  }
+
   &__icon-bt-setting {
     div {
       transform: rotate(0deg);

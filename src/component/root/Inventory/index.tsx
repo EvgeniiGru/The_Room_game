@@ -57,6 +57,8 @@ const Inventory = () => {
     }), [inventoryMap, inventoryProps.currentThing, click, empty])
 
     return <div className={b()}>
+        <div className={b('rope')}/>
+        <div className={b('rope-right')}/>
         <div className={b('button')}/>
         <div className={b('body')}>
             {inventoryMapComponent}

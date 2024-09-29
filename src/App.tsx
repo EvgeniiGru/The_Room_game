@@ -5,13 +5,15 @@ import React, {lazy, Suspense} from "react";
 import Inventory from "./component/root/Inventory/index";
 // import DisplayComponent from "./component/root/GameSpace";
 import Header from "./component/root/Header";
-import InventoryProviderComponent  from "./component/root/Inventory/reduser";
+import InventoryProviderComponent from "./component/root/Inventory/reduser";
 import TaskSheetProviderComponent from "./component/root/TaskSheet/reduser";
 import NextLocation from "./component/root/NextLocation";
 import {useLocation} from "./component/root/NextLocation/reducer";
 import Settings from "./component/root/Settings";
 import {useApp} from "./hooks/App";
-import { ColorConfig } from './ui-kit/ColorConfig';
+import {ColorConfig} from './ui-kit/ColorConfig';
+import {useTheme} from './component/root/Settings/reduser';
+import {Theme} from "./component/root/Settings/type";
 
 const Content = lazy(()=> import('./component/root/GameSpace'))
 
@@ -25,9 +27,11 @@ const App = () => {
         isVisibleMenu,
         setVisibleSettings,
     } = useApp();
+   const {theme} = useTheme();
+
 
     return <div className={b()}>
-        <ColorConfig.Provider value={{config: {colorPrimary: 'var(--white-natural-1)'}}}>
+        <ColorConfig.Provider value={{config: {colorPrimary:  theme === Theme.Dark ?'#d2d2d2': '#232323'}}}>
             <TaskSheetProviderComponent>
                 {isVisibleMenu && (<div className={b('header')}>
                     <Header setVisibleSettings={setVisibleSettings} isVisibleSettings={isVisibleSettings} />

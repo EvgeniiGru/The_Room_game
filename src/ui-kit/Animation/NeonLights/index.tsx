@@ -6,19 +6,12 @@ import React, {
     useEffect,
     useRef,
 } from 'react';
-import {AuxPropsChildren} from "../../../component/root/type";
-import {getNeonLights, IAnimationNeonSetting, ID_NEON_LIGHTS} from "../function";
+import {getNeonLights, ID_NEON_LIGHTS} from "../function";
+import {INeonLightsProps} from './NeonLights.types'
 
 const b = b_.with('neon-lights');
 
-interface INeonLights extends AuxPropsChildren{
-    classNames?: string,
-    settings: IAnimationNeonSetting,
-    borderSize: number,
-    off?: boolean
-};
-
-const NeonLights: FC<INeonLights> = ({children, borderSize, classNames, settings, off}) => {
+const NeonLights: FC<INeonLightsProps> = ({children, borderSize, classNames, settings, off}) => {
     const refNeonLights = useRef<HTMLDivElement>(null);
     useEffect(()=>{
         const current = refNeonLights.current;

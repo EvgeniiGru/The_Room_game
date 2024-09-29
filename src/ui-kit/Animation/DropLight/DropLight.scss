@@ -1,11 +1,29 @@
 .drop-light {
-  display: flex;
   position: absolute;
-  transform: scale(1);
   height: 100%;
   width: 100%;
-  z-index: 0;
-  border: 1px solid black;
-  background: transparent !important;
+  z-index: -1;
+  background-color: transparent !important;
+  border-radius: 12px;
+  &_animation {
+    animation: valve .5s linear infinite;
+  }
+
+
+  @keyframes valve {
+    0% {
+      opacity: 0;
+      transform: scale(1.2)
+    }
+    50% {
+      opacity: .9;
+      transform: scale(1.4)
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.6)
+    }
+  }
+
 }
 

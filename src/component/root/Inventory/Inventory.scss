@@ -1,13 +1,14 @@
 .inventory{
     background: var(--gray-natural-medium);
     border-radius: 34px;
-    height: 95%;
+    height: 90%;
     width: 204px;
     display: flex;
     flex-direction: column;
     flex-grow: 0;
     flex-shrink: 0;
-    margin-left: 40px;
+    margin-left: 45px;
+    margin-top: 35px;
     border: 2px solid var(--gray-natural-dark);
 
     &__button {
@@ -76,6 +77,35 @@
     &__description_thing {
         margin: 5px 0 0 0;
         color: #655e5e;
+    }
+
+    &__rope {
+        position: absolute;
+        transform: translate(24px, -50px);
+        border-radius: 20px;
+        height: 65px;
+        width: 10px;
+        background: repeating-linear-gradient(
+                        -45deg,
+                        #817e7e,
+                        var(--gray-natural-dark) 5px,
+                        var(--gray-natural-medium) 5px,
+                        var(--always-black-1) 10px
+        );
+    }
+    &__rope-right {
+        position: absolute;
+        transform: translate(165px, -50px);
+        border-radius: 20px;
+        height: 65px;
+        width: 10px;
+        background: repeating-linear-gradient(
+                        -45deg,
+                        #817e7e,
+                        var(--gray-natural-dark) 5px,
+                        var(--gray-natural-medium) 5px,
+                        var(--always-black-1) 10px
+        );
     }
 
 }

@@ -20,6 +20,10 @@ const Header = ({isVisibleSettings, setVisibleSettings}: IHeader) => {
         {sprite: {openSong: [100, 500]}});
 
     return (<div className={b()}>
+        <h1 className={b('title-head')}>
+            ComE OuT Of SleeP
+        </h1>
+        <Button.Group gap={10}>
         {!isVisibleSettings && (<Button.Icon
             size={ButtonSize.LARGE}
             mods={{
@@ -46,6 +50,7 @@ const Header = ({isVisibleSettings, setVisibleSettings}: IHeader) => {
                           [IconType.SettingIcon.HoverColor]: IconType.Color.Red
                       }}
         />)}
+        </Button.Group>
     </div>)
 }
 
